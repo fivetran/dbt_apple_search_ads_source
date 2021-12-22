@@ -1,0 +1,4 @@
+packages:
+    - git: https://github.com/fivetran/dbt_fivetran_utils.git
+      revision: hotfix/bignumeric
+      warn-unpinned: false

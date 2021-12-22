@@ -1,0 +1,6 @@
+config-version: 2
+
+name: 'apple_search_ads_source_integration_tests'
+version: '0.1.0'
+
+profile: 'integration_tests' 
