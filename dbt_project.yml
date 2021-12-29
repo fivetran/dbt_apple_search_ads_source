@@ -1,8 +1,9 @@
 name: 'apple_search_ads_source'
 version: '0.1.0'
 config-version: 2
-require-dbt-version: ">=0.20.0"
+require-dbt-version: [">=1.0.0", "<2.0.0"]
 
+profile: 'fivetran'
 
 vars:
   apple_search_ads_source:
@@ -17,7 +18,7 @@ vars:
 
 models:
   apple_search_ads_source:
-    tmp:
-      +materialized: view
-    +materialized: table
+    materialized: table
     +schema: stg_apple_search_ads
+    tmp:
+      materialized: view

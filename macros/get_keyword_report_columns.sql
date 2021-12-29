@@ -1,4 +1,4 @@
-{% macro get_campaign_report_columns() %}
+{% macro get_keyword_report_columns() %}
 
 {% set columns = [
     {"name": "_fivetran_synced", "datatype": dbt_utils.type_timestamp()},
