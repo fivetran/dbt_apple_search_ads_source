@@ -1,0 +1,24 @@
+
+version: 2
+
+sources:
+  - name: apple_search_ads
+    schema: "{{ var('apple_search_ads_schema', 'apple_search_ads') }}"
+    database: "{% if target.type != 'spark'%}{{ var('apple_search_ads_database', target.database) }}{% endif %}"
+    loader: Fivetran
+    loaded_at_field: _fivetran_synced
+    tables:
+      - name: ad_group_history
+        description: ""
+      - name: ad_group_report
+        description: ""
+      - name: campaign_history
+        description: ""
+      - name: campaign_report
+        description: ""
+      - name: keyword_history
+        description: ""
+      - name: keyword_report
+        description: ""
+      - name: organization
+        description: ""

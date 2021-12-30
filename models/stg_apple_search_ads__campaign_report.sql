@@ -22,7 +22,24 @@ fields as (
 final as (
     
     select 
-    -- rename here
+        -- id as campaign_id,
+        -- date,
+        -- conversions,
+        -- impressions,
+        -- local_spend_amount,
+        -- local_spend_currency,
+        -- new_downloads,
+        -- redownloads,
+        -- taps
+        id as campaign_id,
+        date,
+        conversions,
+        impressions,
+        local_spend_amount,
+        local_spend_currency,
+        new_downloads,
+        redownloads,
+        taps
     from fields
 )
 

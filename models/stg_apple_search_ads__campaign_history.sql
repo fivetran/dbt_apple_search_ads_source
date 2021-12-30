@@ -22,7 +22,15 @@ fields as (
 final as (
     
     select 
-    -- rename here
+        id as campaign_id,
+        deleted as is_deleted,
+        start_time as start_at,
+        end_time as end_at,
+        name as campaign_name,
+        organization_id,
+        serving_state_reasons,
+        serving_status,
+        status
     from fields
 )
 

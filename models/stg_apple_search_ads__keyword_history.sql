@@ -22,7 +22,13 @@ fields as (
 final as (
     
     select 
-    -- rename here
+        id as keyword_id,
+        campaign_id,
+        ad_group_id,
+        deleted as is_deleted,
+        match_type,
+        status,
+        text as keywords_text
     from fields
 )
 
