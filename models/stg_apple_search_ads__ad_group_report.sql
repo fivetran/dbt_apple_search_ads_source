@@ -21,7 +21,8 @@ fields as (
 
 final as (
     
-    select 
+    select
+        _fivetran_synced,
         ad_group_id,
         date, 
         conversions,

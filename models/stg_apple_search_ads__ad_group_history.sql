@@ -22,13 +22,17 @@ fields as (
 final as (
     
     select 
+        _fivetran_synced,
+        modification_time as modified_at,
         id as ad_group_id,
         campaign_id,
         deleted as is_deleted,
+        start_time as start_at,
         end_time as end_at,
         name as ad_group_name,
         organization_id,
-        start_time as start_at,
+        serving_state_reasons,
+        serving_status,
         status
     from fields
 )

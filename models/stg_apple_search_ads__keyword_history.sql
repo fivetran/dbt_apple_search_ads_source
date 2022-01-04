@@ -22,9 +22,13 @@ fields as (
 final as (
     
     select 
+        _fivetran_synced,
+        modification_time as modified_at,
         id as keyword_id,
         campaign_id,
         ad_group_id,
+        bid_amount,
+        bid_currency,
         deleted as is_deleted,
         match_type,
         status,

@@ -22,6 +22,7 @@ fields as (
 final as (
     
     select 
+        _fivetran_synced,
         id as keyword_id,
         date,
         conversions,

@@ -21,7 +21,9 @@ fields as (
 
 final as (
     
-    select 
+    select
+        _fivetran_synced,
+        modification_time as modified_at,
         id as campaign_id,
         deleted as is_deleted,
         start_time as start_at,

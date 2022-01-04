@@ -1,0 +1,171 @@
+version: 2
+
+models:
+  - name: stg_apple_search_ads__ad_group_history
+    description: Ad group history
+    columns:
+      - name: _fivetran_synced
+        description: Timestamp of when the record was synced by Fivetran
+      - name: modified_at
+        description: Timestamp of when the ad group object was last modified
+      - name: ad_group_id
+        description: Ad group ID associated with the record
+      - name: campaign_id
+        description: Campaign ID associated with the record
+      - name: is_deleted
+        description: Boolean indicating whether the ad group has been soft deleted or not
+      - name: start_at
+        description: The designated ad group start time
+      - name: end_at
+        description: The designated ad group end time
+      - name: ad_group_name
+        description: Ad group name
+      - name: organization_id
+        description: Organization ID associated with the record
+      - name: serving_state_reasons
+        description: When an ad group is not running, list of reasons will be returned as strings
+      - name: serving_status
+        description: Whether ad group is serving or not
+      - name: status
+        description: The current status of the ad group, values include ENABLED and PAUSED
+
+  - name: stg_apple_search_ads__ad_group_report
+    description: Ad group daily metric reporting
+    columns:
+      - name: _fivetran_synced
+        description: Timestamp of when the record was synced by Fivetran
+      - name: ad_group_id
+        description: Ad group ID associated with the record
+      - name: date
+        description: Date for daily report aggregation
+      - name: conversions
+        description: Sum of new_downloads and redownloads
+      - name: impressions
+        description: Number of times your ad appeared in App Store search results
+      - name: local_spend_amount
+        description: The sum of costs associated with the number of impressions served. Spend is measured in the currency used in the campaign.
+      - name: local_spend_currency
+        description: This currency value should match the respective organization's currency value
+      - name: new_downloads
+        description: App downloads from new users who have never before installed the respective app
+      - name: redownloads
+        description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device
+      - name: taps
+        description: The number of times ad was tapped by users within the reporting time period
+
+  - name: stg_apple_search_ads__campaign_history
+    description: Campaign history
+    columns:
+      - name: _fivetran_synced
+        description: Timestamp of when the record was synced by Fivetran
+      - name: modified_at
+        description: Timestamp of when the campaign object was last modified
+      - name: campaign_id
+        description: Campaign ID associated with the record
+      - name: is_deleted
+        description: Boolean indicating whether the campaign has been soft deleted or not
+      - name: start_at
+        description: The designated ad group start time (ad group with the earliest start time associated with this campaign)
+      - name: end_at
+        description: The designated campaign end time (ad group with the latest start time associated with this campaign)
+      - name: campaign_name
+        description: Campaign name for the record
+      - name: organization_id
+        description: Organization ID associated with the record
+      - name: serving_state_reasons
+        description: When a campaign is not running, list of reasons will be returned as strings
+      - name: serving_status
+        description: Whether campaign is serving or not
+      - name: status
+        description: The current status of the campaign, values include ENABLED and PAUSED
+        
+  - name: stg_apple_search_ads__campaign_report
+    description: Campaign daily metric reporting
+    columns:
+      - name: _fivetran_synced
+        description: Timestamp of when the record was synced by Fivetran
+      - name: campaign_id
+        description: Campaign ID associated with the record
+      - name: date
+        description: Date for daily report aggregation
+      - name: conversions
+        description: Sum of new_downloads and redownloads
+      - name: impressions
+        description: Number of times your ad appeared in App Store search results
+      - name: local_spend_amount
+        description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
+      - name: local_spend_currency
+        description: This currency value should match the respective organization's currency value
+      - name: new_downloads
+        description: App downloads from new users who have never before installed the respective app
+      - name: redownloads
+        description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device
+      - name: taps
+        description: The number of times ad was tapped by users within the reporting time period
+  
+
+  - name: stg_apple_search_ads__keyword_history
+    description: Keyword history
+    columns:
+      - name: _fivetran_synced
+        description: Timestamp of when the record was synced by Fivetran
+      - name: modified_at
+        description: Timestamp of when the keyword object was last modified
+      - name: keyword_id
+        description: Keyword ID associated with the record
+      - name: campaign_id
+        description: Campaign ID associated with the record
+      - name: ad_group_id
+        description: Ad group ID associated with the record
+      - name: bid_amount
+        description: The bid amount to display your ad for the matching text value
+      - name: bid_currency
+        description: This currency value should match the respective organization's currency value
+      - name: is_deleted
+        description: Boolean indicating whether the keyword has been soft deleted or not
+      - name: match_type
+        description: Controls how ads are matched to user searches; EXACT or BROAD
+      - name: status
+        description: The current status of the keyword, values include ENABLED and PAUSED
+      - name: keywords_text
+        description: The word or phrase to match in user searches, to show respective ad
+
+  - name: stg_apple_search_ads__keyword_report
+    description: Keyword daily metric reporting
+    columns:
+      - name: _fivetran_synced
+        description: Timestamp of when the record was synced by Fivetran
+      - name: keyword_id
+        description: Keyword ID associated with the record
+      - name: date
+        description: Date for daily report aggregation
+      - name: conversions
+        description: Sum of new_downloads and redownloads
+      - name: impressions
+        description: Number of times your ad appeared in App Store search results
+      - name: local_spend_amount
+        description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
+      - name: local_spend_currency
+        description: This currency value should match the respective organization's currency value
+      - name: new_downloads
+        description: App downloads from new users who have never before installed the respective app
+      - name: redownloads
+        description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device
+      - name: taps
+        description: The number of times ad was tapped by users within the reporting time period
+
+  - name: stg_apple_search_ads__organization
+    description: Organization information
+    columns:
+      - name: _fivetran_synced
+        description: Timestamp of when the record was synced by Fivetran
+      - name: organization_id
+        description: Organization ID associated with the record
+      - name: currency
+        description: Specified currency for respective organization
+      - name: payment_model
+        description: Values include 'LOC', 'PAYG' or <empty string> (payment method hasn't been set)
+      - name: organization_name
+        description: Name of organization
+      - name: time_zone
+        description: Organization default timezone; values can be ORTZ or UTC

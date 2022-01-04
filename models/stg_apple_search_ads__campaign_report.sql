@@ -22,15 +22,7 @@ fields as (
 final as (
     
     select 
-        -- id as campaign_id,
-        -- date,
-        -- conversions,
-        -- impressions,
-        -- local_spend_amount,
-        -- local_spend_currency,
-        -- new_downloads,
-        -- redownloads,
-        -- taps
+        _fivetran_synced,
         id as campaign_id,
         date,
         conversions,
