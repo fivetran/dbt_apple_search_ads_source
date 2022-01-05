@@ -18,6 +18,7 @@ vars:
 
 seeds:
   +quote_columns: "{{ true if target.type == 'redshift' else false }}"
-  apple_search_ads_source_integration_tests:
-    +column_types:
-      _fivetran_synced: timestamp
+
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['spark_utils', 'dbt_utils']
