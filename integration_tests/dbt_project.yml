@@ -8,13 +8,14 @@ profile: 'integration_tests'
 vars:
   apple_search_ads_schema: apple_search_ads_source_integration_tests
   apple_search_ads_source:
-    organization: "{{ ref('organization') }}"
-    campaign_history: "{{ ref('campaign_history') }}"
-    campaign_report: "{{ ref('campaign_report') }}"
-    ad_group_history: "{{ ref('ad_group_history') }}"
-    ad_group_report: "{{ ref('ad_group_report') }}"
-    keyword_history: "{{ ref('keyword_history') }}"
-    keyword_report: "{{ ref('keyword_report') }}"
+    organization: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','organization') }}{% else %}{{ ref('organization') }}{% endif %}"
+    campaign_history: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','campaign_history') }}{% else %}{{ ref('campaign_history') }}{% endif %}"
+    campaign_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','campaign_report') }}{% else %}{{ ref('campaign_report') }}{% endif %}"
+    ad_group_history: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','ad_group_history') }}{% else %}{{ ref('ad_group_history') }}{% endif %}"
+    ad_group_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','ad_group_report') }}{% else %}{{ ref('ad_group_report') }}{% endif %}"
+    keyword_history: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','keyword_history') }}{% else %}{{ ref('keyword_history') }}{% endif %}"
+    keyword_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','keyword_report') }}{% else %}{{ ref('keyword_report') }}{% endif %}"
+
 
 seeds:
   +quote_columns: "{{ true if target.type == 'redshift' else false }}"
