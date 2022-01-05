@@ -24,9 +24,13 @@ seeds:
     ad_group_history: 
       +column_types:
         modification_time: timestamp
+        start_time: timestamp
+        end_time: timestamp
     campaign_history:
       +column_types:
         modification_time: timestamp
+        start_time: timestamp
+        end_time: timestamp
     keyword_history:
       +column_types:
         modification_time: timestamp
