@@ -6,7 +6,6 @@ version: '0.1.0'
 profile: 'integration_tests' 
 
 vars:
-  apple_search_ads_schema: apple_search_ads_source_integration_tests
   apple_search_ads_source:
     organization: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','organization') }}{% else %}{{ ref('organization') }}{% endif %}"
     campaign_history: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','campaign_history') }}{% else %}{{ ref('campaign_history') }}{% endif %}"
@@ -15,6 +14,7 @@ vars:
     ad_group_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','ad_group_report') }}{% else %}{{ ref('ad_group_report') }}{% endif %}"
     keyword_history: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','keyword_history') }}{% else %}{{ ref('keyword_history') }}{% endif %}"
     keyword_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','keyword_report') }}{% else %}{{ ref('keyword_report') }}{% endif %}"
+    apple_search_ads_schema: apple_search_ads_source_integration_tests
 
 
 seeds:
