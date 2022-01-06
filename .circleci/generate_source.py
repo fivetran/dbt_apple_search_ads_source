@@ -5,7 +5,7 @@ client = bigquery.Client.from_service_account_json(
     f"{os.getenv('HOME')}/gcloud-service-key.json"
 )
 
-schema_name = "apple_search_ads"
+schema_name = "apple_search_ads_source_integration_tests"
 
 tables = [
     {"seed": "ad_group_history", "source": "ad_group_history"},
