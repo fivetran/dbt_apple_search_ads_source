@@ -5,16 +5,16 @@ client = bigquery.Client.from_service_account_json(
     f"{os.getenv('HOME')}/gcloud-service-key.json"
 )
 
-schema_name = "apple_search_ads_source_integration_tests"
+schema_name = "apple_search_ads_source_integration_tests_stg_apple_search_ads"
 
 tables = [
-    {"seed": "ad_group_history", "source": "ad_group_history"},
-    {"seed": "ad_group_report", "source": "ad_group_report"},
-    {"seed": "campaign_history", "source": "campaign_history"},
-    {"seed": "campaign_report", "source": "campaign_report"},
-    {"seed": "keyword_history", "source": "keyword_history"},
-    {"seed": "keyword_report", "source": "keyword_report"},
-    {"seed": "organization", "source": "organization"},
+    {"seed": "ad_group_history_data", "source": "ad_group_history"},
+    {"seed": "ad_group_report_data", "source": "ad_group_report"},
+    {"seed": "campaign_history_data", "source": "campaign_history"},
+    {"seed": "campaign_report_data", "source": "campaign_report"},
+    {"seed": "keyword_history_data", "source": "keyword_history"},
+    {"seed": "keyword_report_data", "source": "keyword_report"},
+    {"seed": "organization_data", "source": "organization"},
 ]
 
 for table_set in tables:
