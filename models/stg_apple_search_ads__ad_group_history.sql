@@ -23,7 +23,7 @@ final as (
     
     select 
         _fivetran_synced,
-        modification_time as modified_at,
+        modification_time as modified_at, --We should check to see if we will need to add logic to get the most recent ad_group
         id as ad_group_id,
         campaign_id,
         deleted as is_deleted,
