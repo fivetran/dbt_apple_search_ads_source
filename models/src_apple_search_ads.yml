@@ -19,8 +19,6 @@ sources:
             description: Ad group ID associated with the record
           - name: campaign_id
             description: Campaign ID associated with the record
-          - name: deleted
-            description: Boolean indicating whether the ad group has been soft deleted or not
           - name: start_time
             description: Timestamp of designated ad group start time
           - name: end_time
@@ -69,8 +67,6 @@ sources:
             description: Timestamp of when the campaign object was last modified
           - name: id
             description: Campaign ID associated with the record
-          - name: deleted
-            description: Indicates whether the campaign has been soft deleted or not
           - name: start_time
             description: The designated ad group start time (ad group with the earliest start time associated with this campaign)
           - name: end_time
@@ -127,8 +123,6 @@ sources:
             description: The bid amount to display your ad for the matching text value
           - name: bid_currency
             description: This currency value should match the respective organization's currency value
-          - name: deleted
-            description: Boolean indicating whether the keyword has been soft deleted or not
           - name: match_type
             description: Controls how ads are matched to user searches; EXACT or BROAD
           - name: status
@@ -189,16 +183,12 @@ sources:
             description: Campaign ID associated with the record
           - name: date
             description: Date for daily report aggregation
-          - name: ad_group_deleted
-            description: Boolean indicating whether the ad group has been soft deleted or not
           - name: ad_group_name
             description: Ad group name
           - name: bid_amount_amount
             description: The bid amount to display your ad for the matching text value
           - name: bid_amount_currency
             description: This currency value should match the respective organization's currency value
-          - name: deleted
-            description: Boolean indicating whether the search term has been soft deleted or not
           - name: keyword
             description: The word or phrase to match in user searches, to show respective ad
           - name: keyword_display_status

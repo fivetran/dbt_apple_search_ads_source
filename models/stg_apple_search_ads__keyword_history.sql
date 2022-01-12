@@ -31,7 +31,7 @@ final as (
         bid_currency,
         match_type,
         status,
-        text as keywords_text
+        text as keyword_text
     from fields
     where deleted is false 
 )

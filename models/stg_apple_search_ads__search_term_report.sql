@@ -28,11 +28,10 @@ final as (
         ad_group_id,
         campaign_id,
         date,
-        ad_group_deleted as is_ad_group_deleted,
         ad_group_name,
         bid_amount_amount as bid_amount,
         bid_amount_currency as bid_currency,
-        keyword as keywords_text,
+        keyword as keyword_text,
         keyword_display_status,
         keyword_id,
         local_spend_amount,
@@ -46,6 +45,7 @@ final as (
         redownloads
     from fields
     where deleted is false
+        and ad_group_deleted is false
 )
 
 select * from final
