@@ -1,21 +1,21 @@
 [![Apache License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 # Apple Search Ads (Source) 
 
-This package models Jira data from [Fivetran's connector](https://fivetran.com/docs/applications/apple-search-ads). It uses data in the format described by [this ERD](https://fivetran.com/docs/applications/apple-search-ads/#schemainformation).
+This package models Apple Search Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/apple-search-ads). It uses data in the format described by [this ERD](https://fivetran.com/docs/applications/apple-search-ads/#schemainformation).
 
 This package enriches your Fivetran data by doing the following:
 - Adds descriptions to tables and columns that are synced using Fivetran
-- Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
+- Adds column-level testing where applicable. For example, all ID fields are tested for non-null values.
 - Models staging tables, which will be used in our transform package
 
 ## Models
-This package contains staging models, designed to work simultaneously with our [Jira modeling package](https://github.com/fivetran/dbt_apple_search_ads).  The staging models:
+This package contains staging models, designed to work simultaneously with our [Apple Search Ads modeling package](https://github.com/fivetran/dbt_apple_search_ads).  The staging models:
 - Remove any rows that are soft-deleted
 - Name columns consistently across all packages:
     - Boolean fields are prefixed with `is_` or `has_`
     - Timestamps are appended with `_at`
-    - ID primary keys are prefixed with the name of the table.  For example, the `issue` table's ID column is renamed `issue_id`.
-    - Foreign keys include the table that they refer to. For example, an issue's `assignee` user ID column is renamed `assignee_user_id`.
+    - ID primary keys are prefixed with the name of the table. For example, the `ad_group_history` table's ID column is renamed `ad_group_id`.
+    - Foreign keys include the table that they refer to. For example, a keyword's `campaign` will be named `campaign_id`. 
 
 ## Installation Instructions
 Add the following to your `packages.yml` file:
