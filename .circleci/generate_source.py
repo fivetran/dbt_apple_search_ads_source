@@ -15,6 +15,7 @@ tables = [
     {"seed": "keyword_history_data", "source": "keyword_history"},
     {"seed": "keyword_report_data", "source": "keyword_report"},
     {"seed": "organization_data", "source": "organization"},
+    {"seed": "search_term_report_data", "source": "search_term_report"},
 ]
 
 for table_set in tables:
