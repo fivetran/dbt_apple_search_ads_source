@@ -29,7 +29,7 @@ packages:
 Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instructions, or [read the dbt docs](https://docs.getdbt.com/docs/package-management) for more information on installing packages.
 
 ## Configuration
-By default, this package looks for your Apple Search Ads data in the `apple_search_ads` schema of your [target database](https://docs.getdbt.com/docs/running-a-dbt-project/using-the-command-line-interface/configure-your-profile). If this is not where your Jira data is, add the following configuration to your `dbt_project.yml` file:
+By default, this package looks for your Apple Search Ads data in the `apple_search_ads` schema of your [target database](https://docs.getdbt.com/docs/running-a-dbt-project/using-the-command-line-interface/configure-your-profile). If this is not where your Apple Search Ads data is, add the following configuration to your `dbt_project.yml` file:
 
 ```yml
 # dbt_project.yml
@@ -40,6 +40,21 @@ config-version: 2
 vars:
     apple_search_ads_database: your_database_name
     apple_search_ads_schema: your_schema_name 
+```
+### Disabling models
+It's possible that your Apple Search Ads connector does not sync every table that this package expects. If your syncs exclude certain tables, it is because you either don't use that functionality in Apple Search Ads or actively excluded some tables from your syncs. To disable the corresponding functionality in the package, you must add the relevant variables. By default, all variables are assumed to be true. Add variables for only the tables you would like to disable. 
+
+The `apple_search_ads_using_search_terms` variable below refers to the `search_terms_report` table. The [search match](https://searchads.apple.com/help/campaigns/0006-understand-search-match) functionality must be turned on within specified ad groups in order for there to be data populated in this table. 
+
+```yml
+# dbt_project.yml
+
+...
+config-version: 2
+
+vars:
+  apple_search_ads__using_search_terms: false # Disable if you do not have the search_term_report table, or if you do not want search_term_report related metrics reported
+
 ```
 
 ### Changing the Build Schema

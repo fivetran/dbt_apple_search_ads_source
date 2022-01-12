@@ -13,6 +13,7 @@ vars:
     ad_group_report: "{{ source('apple_search_ads', 'ad_group_report') }}"
     keyword_history: "{{ source('apple_search_ads', 'keyword_history') }}"
     keyword_report: "{{ source('apple_search_ads', 'keyword_report') }}"
+    search_term_report: "{{ source('apple_search_ads', 'search_term_report') }}"
 
 
 models:

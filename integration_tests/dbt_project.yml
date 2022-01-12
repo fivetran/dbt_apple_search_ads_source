@@ -14,6 +14,7 @@ vars:
     ad_group_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','ad_group_report') }}{% else %}{{ ref('ad_group_report_data') }}{% endif %}"
     keyword_history: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','keyword_history') }}{% else %}{{ ref('keyword_history_data') }}{% endif %}"
     keyword_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','keyword_report') }}{% else %}{{ ref('keyword_report_data') }}{% endif %}"
+    search_term_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','search_term_report') }}{% else %}{{ ref('search_term_report_data') }}{% endif %}"
     apple_search_ads_schema: apple_search_ads_source_integration_tests
 
 
