@@ -23,9 +23,8 @@ final as (
     
     select
         _fivetran_synced,
-        modification_time as modified_at,
+        row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record,
         id as campaign_id,
-        deleted as is_deleted,
         start_time as start_at,
         end_time as end_at,
         name as campaign_name,
@@ -34,6 +33,7 @@ final as (
         serving_status,
         status
     from fields
+    where deleted is false 
 )
 
 select * from final

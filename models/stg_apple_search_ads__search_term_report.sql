@@ -1,3 +1,4 @@
+{{ config(enabled=var('apple_search_ads__using_search_terms', True)) }}
 
 with base as (
 
@@ -31,13 +32,12 @@ final as (
         ad_group_name,
         bid_amount_amount as bid_amount,
         bid_amount_currency as bid_currency,
-        deleted as is_deleted,
-        keyword,
+        keyword as keywords_text,
         keyword_display_status,
         keyword_id,
         local_spend_amount,
         local_spend_currency,
-        match_type,
+        match_type as keyword_match_type,
         search_term_source,
         search_term_text,
         impressions,
@@ -45,6 +45,7 @@ final as (
         new_downloads,
         redownloads
     from fields
+    where deleted is false
 )
 
 select * from final
