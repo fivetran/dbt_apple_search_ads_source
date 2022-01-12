@@ -44,8 +44,11 @@ final as (
         new_downloads,
         redownloads
     from fields
-    where deleted is false
-        and ad_group_deleted is false
+    {% if target.type == 'snowflake' -%}
+        where deleted = 'false' and ad_group_deleted = 'false'
+    {% else -%}
+        where deleted is false and ad_group_deleted is false
+    {% endif %}
 )
 
 select * from final

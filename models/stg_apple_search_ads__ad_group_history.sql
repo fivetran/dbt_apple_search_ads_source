@@ -34,7 +34,11 @@ final as (
         serving_status,
         status
     from fields
-    where deleted is false 
+    {% if target.type == 'snowflake' -%}
+        where deleted = 'false'
+    {% else -%}
+        where deleted is false
+    {% endif %}
 )
 
 select * from final

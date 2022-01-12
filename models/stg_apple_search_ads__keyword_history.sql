@@ -33,7 +33,11 @@ final as (
         status,
         text as keyword_text
     from fields
-    where deleted is false 
+    {% if target.type == 'snowflake' -%}
+        where deleted = 'false'
+    {% else -%}
+        where deleted is false
+    {% endif %}
 )
 
 select * from final
