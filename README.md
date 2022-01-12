@@ -1,6 +1,7 @@
 [![Apache License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 # Apple Search Ads (Source) 
 
+# TEST REMOVE BEFORE RELEASE
 This package models Apple Search Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/apple-search-ads). It uses data in the format described by [this ERD](https://fivetran.com/docs/applications/apple-search-ads/#schemainformation).
 
 This package enriches your Fivetran data by doing the following:
