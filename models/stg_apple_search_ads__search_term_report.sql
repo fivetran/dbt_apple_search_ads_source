@@ -27,7 +27,7 @@ final as (
         _fivetran_synced,
         ad_group_id,
         campaign_id,
-        date,
+        date as date_day,
         ad_group_name,
         bid_amount_amount as bid_amount,
         bid_amount_currency as bid_currency,

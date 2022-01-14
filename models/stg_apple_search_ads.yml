@@ -40,7 +40,7 @@ models:
         description: Timestamp of when the record was synced by Fivetran
       - name: ad_group_id
         description: Ad group ID associated with the record
-      - name: date
+      - name: date_day
         description: Date for daily report aggregation
       - name: conversions
         description: Sum of new_downloads and redownloads
@@ -94,7 +94,7 @@ models:
         description: Timestamp of when the record was synced by Fivetran
       - name: campaign_id
         description: Campaign ID associated with the record
-      - name: date
+      - name: date_day
         description: Date for daily report aggregation
       - name: conversions
         description: Sum of new_downloads and redownloads
@@ -149,7 +149,7 @@ models:
         description: Timestamp of when the record was synced by Fivetran
       - name: keyword_id
         description: Keyword ID associated with the record
-      - name: date
+      - name: date_day
         description: Date for daily report aggregation
       - name: conversions
         description: Sum of new_downloads and redownloads
@@ -201,7 +201,7 @@ models:
         description: Ad group ID associated with the record
       - name: campaign_id
         description: Campaign ID associated with the record
-      - name: date
+      - name: date_day
         description: Date for daily report aggregation
       - name: ad_group_name
         description: Ad group name

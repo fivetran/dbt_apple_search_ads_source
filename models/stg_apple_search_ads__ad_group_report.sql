@@ -24,7 +24,7 @@ final as (
     select
         _fivetran_synced,
         ad_group_id,
-        date, 
+        date as date_day, 
         conversions,
         impressions,
         local_spend_amount,

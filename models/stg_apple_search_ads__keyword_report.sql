@@ -24,7 +24,7 @@ final as (
     select 
         _fivetran_synced,
         id as keyword_id,
-        date,
+        date as date_day,
         conversions,
         impressions,
         local_spend_amount,
