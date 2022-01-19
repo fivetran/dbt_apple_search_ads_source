@@ -7,15 +7,15 @@ profile: 'integration_tests'
 
 vars:
   apple_search_ads_source:
-    organization: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','organization') }}{% else %}{{ ref('organization_data') }}{% endif %}"
-    campaign_history: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','campaign_history') }}{% else %}{{ ref('campaign_history_data') }}{% endif %}"
-    campaign_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','campaign_report') }}{% else %}{{ ref('campaign_report_data') }}{% endif %}"
-    ad_group_history: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','ad_group_history') }}{% else %}{{ ref('ad_group_history_data') }}{% endif %}"
-    ad_group_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','ad_group_report') }}{% else %}{{ ref('ad_group_report_data') }}{% endif %}"
-    keyword_history: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','keyword_history') }}{% else %}{{ ref('keyword_history_data') }}{% endif %}"
-    keyword_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','keyword_report') }}{% else %}{{ ref('keyword_report_data') }}{% endif %}"
-    creative_set_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','creative_set_report') }}{% else %}{{ ref('creative_set_report_data') }}{% endif %}"
-    search_term_report: "{% if var('generating_docs','no') == 'yes' %}{{ source('apple_search_ads','search_term_report') }}{% else %}{{ ref('search_term_report_data') }}{% endif %}"
+    organization: "{{ ref('organization_data') }}"
+    campaign_history: "{{ ref('campaign_history_data') }}"
+    campaign_report: "{{ ref('campaign_report_data') }}"
+    ad_group_history: "{{ ref('ad_group_history_data') }}"
+    ad_group_report: "{{ ref('ad_group_report_data') }}"
+    keyword_history: "{{ ref('keyword_history_data') }}"
+    keyword_report: "{{ ref('keyword_report_data') }}"
+    creative_set_report: "{{ ref('creative_set_report_data') }}"
+    search_term_report: "{{ ref('search_term_report_data') }}"
     apple_search_ads_schema: apple_search_ads_source_integration_tests
 
 
