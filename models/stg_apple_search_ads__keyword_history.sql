@@ -28,7 +28,7 @@ final as (
         id as keyword_id,
         campaign_id,
         ad_group_id,
-        bid_amount, f
+        bid_amount, 
         bid_currency,
         match_type,
         status,
