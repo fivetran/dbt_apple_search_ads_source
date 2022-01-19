@@ -3,18 +3,22 @@ version: 2
 models:
   - name: stg_apple_search_ads__ad_group_history
     description: Ad group history
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_group_id
+            - modified_at
     columns:
-      - name: ad_group_id
-        tests:
-          - not_null
       - name: _fivetran_synced
         description: Timestamp of when the record was synced by Fivetran
-      - name: is_most_recent_record
-        description: Boolean indicating whether record was the most recent instance
       - name: modified_at
         description: Timestamp of when the ad group object was last modified
+      - name: is_most_recent_record
+        description: Boolean indicating whether record was the most recent instance
       - name: ad_group_id
         description: Ad group ID associated with the record
+        tests:
+          - not_null
       - name: campaign_id
         description: Campaign ID associated with the record
       - name: start_at
@@ -34,14 +38,18 @@ models:
 
   - name: stg_apple_search_ads__ad_group_report
     description: Ad group daily metric reporting
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_group_id
+            - date_day
     columns:
-      - name: ad_group_id
-        tests:
-          - not_null
       - name: _fivetran_synced
         description: Timestamp of when the record was synced by Fivetran
       - name: ad_group_id
         description: Ad group ID associated with the record
+        tests: 
+          - not_null
       - name: date_day
         description: Date for daily report aggregation
       - name: conversions
@@ -61,18 +69,22 @@ models:
 
   - name: stg_apple_search_ads__campaign_history
     description: Campaign history
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - campaign_id
+            - modified_at
     columns:
-      - name: campaign_id
-        tests:
-          - not_null
       - name: _fivetran_synced
         description: Timestamp of when the record was synced by Fivetran
-      - name: is_most_recent_record
-        description: Boolean representing whether a record is the most recent version of that record.
       - name: modified_at
         description: Timestamp of when the campaign object was last modified
+      - name: is_most_recent_record
+        description: Boolean representing whether a record is the most recent version of that record.
       - name: campaign_id
         description: Campaign ID associated with the record
+        tests: 
+          - not_null
       - name: start_at
         description: The designated ad group start time (ad group with the earliest start time associated with this campaign)
       - name: end_at
@@ -90,14 +102,18 @@ models:
         
   - name: stg_apple_search_ads__campaign_report
     description: Campaign daily metric reporting
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - campaign_id
+            - date_day
     columns:
-      - name: campaign_id
-        tests: 
-          - not_null
       - name: _fivetran_synced
         description: Timestamp of when the record was synced by Fivetran
       - name: campaign_id
         description: Campaign ID associated with the record
+        tests: 
+          - not_null
       - name: date_day
         description: Date for daily report aggregation
       - name: conversions
@@ -118,18 +134,22 @@ models:
 
   - name: stg_apple_search_ads__keyword_history
     description: Keyword history
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - keyword_id
+            - modified_at
     columns:
-      - name: keyword_id
-        tests:
-          - not_null
       - name: _fivetran_synced
         description: Timestamp of when the record was synced by Fivetran
-      - name: is_most_recent_record
-        description: Boolean representing whether a record is the most recent version of that record.
       - name: modified_at
         description: Timestamp of when the keyword object was last modified
+      - name: is_most_recent_record
+        description: Boolean representing whether a record is the most recent version of that record.
       - name: keyword_id
         description: Keyword ID associated with the record
+        tests:
+          - not_null
       - name: campaign_id
         description: Campaign ID associated with the record
       - name: ad_group_id
@@ -147,14 +167,18 @@ models:
 
   - name: stg_apple_search_ads__keyword_report
     description: Keyword daily metric reporting
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - keyword_id
+            - date_day
     columns:
-      - name: keyword_id
-        tests:
-          - not_null
       - name: _fivetran_synced
         description: Timestamp of when the record was synced by Fivetran
       - name: keyword_id
         description: Keyword ID associated with the record
+        tests:
+          - not_null
       - name: date_day
         description: Date for daily report aggregation
       - name: conversions
@@ -175,14 +199,13 @@ models:
   - name: stg_apple_search_ads__organization
     description: Organization information
     columns:
-      - name: organization_id
-        tests:
-          - unique
-          - not_null
       - name: _fivetran_synced
         description: Timestamp of when the record was synced by Fivetran
       - name: organization_id
         description: Organization ID associated with the record
+        tests:
+          - unique
+          - not_null
       - name: currency
         description: Specified currency for respective organization
       - name: payment_model

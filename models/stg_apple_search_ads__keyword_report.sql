@@ -27,8 +27,8 @@ final as (
         date as date_day,
         conversions,
         impressions,
-        local_spend_amount,
-        local_spend_currency,
+        local_spend_amount as spend,
+        local_spend_currency as currency,
         new_downloads,
         redownloads,
         taps
