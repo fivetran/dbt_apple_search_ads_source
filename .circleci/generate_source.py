@@ -15,6 +15,7 @@ tables = [
     {"seed": "keyword_history_data", "source": "keyword_history"},
     {"seed": "keyword_report_data", "source": "keyword_report"},
     {"seed": "organization_data", "source": "organization"},
+    {"seed": "creative_set_report_data", "source": "creative_set_report"},
     {"seed": "search_term_report_data", "source": "search_term_report"},
 ]
 

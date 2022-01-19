@@ -14,6 +14,7 @@ vars:
     keyword_history: "{{ source('apple_search_ads', 'keyword_history') }}"
     keyword_report: "{{ source('apple_search_ads', 'keyword_report') }}"
     search_term_report: "{{ source('apple_search_ads', 'search_term_report') }}"
+    creative_set_report: "{{ source('apple_search_ads', 'creative_set_report') }}"
     apple_search_ads__using_search_terms: true
 
 models:

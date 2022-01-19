@@ -23,8 +23,8 @@ fields as (
 final as (
     
     select 
-        _fivetran_id,
         _fivetran_synced,
+        _fivetran_id,
         ad_group_id,
         campaign_id,
         date as date_day,
