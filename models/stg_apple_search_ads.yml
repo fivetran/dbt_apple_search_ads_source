@@ -56,9 +56,9 @@ models:
         description: Sum of new_downloads and redownloads
       - name: impressions
         description: Number of times your ad appeared in App Store search results
-      - name: local_spend_amount
+      - name: spend
         description: The sum of costs associated with the number of impressions served. Spend is measured in the currency used in the campaign.
-      - name: local_spend_currency
+      - name: currency
         description: This currency value should match the respective organization's currency value
       - name: new_downloads
         description: App downloads from new users who have never before installed the respective app
@@ -120,9 +120,9 @@ models:
         description: Sum of new_downloads and redownloads
       - name: impressions
         description: Number of times your ad appeared in App Store search results
-      - name: local_spend_amount
+      - name: spend
         description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
-      - name: local_spend_currency
+      - name: currency
         description: This currency value should match the respective organization's currency value
       - name: new_downloads
         description: App downloads from new users who have never before installed the respective app
@@ -185,9 +185,9 @@ models:
         description: Sum of new_downloads and redownloads
       - name: impressions
         description: Number of times your ad appeared in App Store search results
-      - name: local_spend_amount
+      - name: spend
         description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
-      - name: local_spend_currency
+      - name: currency
         description: This currency value should match the respective organization's currency value
       - name: new_downloads
         description: App downloads from new users who have never before installed the respective app
@@ -229,6 +229,8 @@ models:
         description: A Fivetran internal unique id that helps us avoid duplicate rows in primary keyless tables
       - name: ad_group_id
         description: Ad group ID associated with the record
+      - name: ad_format
+        description: Format of creative set
       - name: campaign_id
         description: Campaign ID associated with the record
       - name: date_day
@@ -245,9 +247,9 @@ models:
         description: The keyword display status can either be ACTIVE or PAUSED
       - name: keyword_id
         description: Keyword ID associated with the record
-      - name: local_spend_amount
+      - name: spend
         description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
-      - name: local_spend_currency
+      - name: currency
         description: This currency value should match the respective organization's currency value
       - name: keyword_match_type
         description: Controls how ads are matched to user searches; values include EXACT, BROAD or AUTO
@@ -284,6 +286,8 @@ models:
         description: Campaign ID associated with the record
       - name: ad_group_id
         description: Ad group ID associated with the record
+      - name: ad_format
+        description: Ad format associated with the record
       - name: date_day
         description: Date for daily report aggregation
       - name: creative_set_name
@@ -294,9 +298,9 @@ models:
         description: Time in which creative set was created
       - name: display_status
         description: The display status of creative set
-      - name: local_spend_amount
+      - name: spend
         description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
-      - name: local_spend_currency
+      - name: currency
         description: This currency value should match the respective organization's currency value
       - name: impressions
         description: Number of times your ad appeared in App Store search results

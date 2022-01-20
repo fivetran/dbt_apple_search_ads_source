@@ -28,6 +28,7 @@ final as (
         org_id as organization_id,
         campaign_id,
         ad_group_id,
+        ad_format,
         date as date_day,
         creative_set_name,
         creative_set_id,
