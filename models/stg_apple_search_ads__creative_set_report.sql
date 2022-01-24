@@ -24,7 +24,6 @@ final as (
     select 
         _fivetran_synced,
         _fivetran_id,
-        row_number() over (partition by creative_set_id order by _fivetran_synced desc) = 1 as is_most_recent_record,
         org_id as organization_id,
         campaign_id,
         ad_group_id,
