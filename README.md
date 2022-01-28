@@ -44,7 +44,7 @@ vars:
 ### Disable models
 It's possible that your Apple Search Ads connector does not sync every table that this package expects. If your syncs exclude certain tables, it is because you either don't use that functionality in Apple Search Ads or actively excluded some tables from your syncs. To disable the corresponding functionality in the package, you must add the relevant variables. By default, the package assume that all variables are true. Add variables for only the tables you want to disable. 
 
-The `apple_search_ads_using_search_terms` variable below refers to the `search_terms_report` table. The [search match](https://searchads.apple.com/help/campaigns/0006-understand-search-match) functionality must be turned on within specified ad groups in order for there to be data populated in this table. 
+The `apple_search_ads_using_search_terms` variable below refers to the `search_terms_report` table. You must enable the [search match](https://searchads.apple.com/help/campaigns/0006-understand-search-match) function within each ad group to populate this table with data. 
 
 ```yml
 # dbt_project.yml
