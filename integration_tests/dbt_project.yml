@@ -15,7 +15,6 @@ vars:
     ad_group_report: "{{ ref('ad_group_report_data') }}"
     keyword_history: "{{ ref('keyword_history_data') }}"
     keyword_report: "{{ ref('keyword_report_data') }}"
-    creative_set_report: "{{ ref('creative_set_report_data') }}"
     search_term_report: "{{ ref('search_term_report_data') }}"
     apple_search_ads_schema: apple_search_ads_source_integration_tests
 
