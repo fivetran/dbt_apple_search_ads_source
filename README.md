@@ -9,16 +9,16 @@ This package enriches your Fivetran data by doing the following:
 - Models staging tables, which will be used in our transform package
 
 ## Models
-This package contains staging models, designed to work simultaneously with our [Apple Search Ads modeling package](https://github.com/fivetran/dbt_apple_search_ads).  The staging models:
+This package contains staging models, designed to work simultaneously with our [Apple Search Ads transform package](https://github.com/fivetran/dbt_apple_search_ads).  The staging models are designed to:
 - Remove any rows that are soft-deleted
 - Name columns consistently across all packages:
     - Boolean fields are prefixed with `is_` or `has_`
     - Timestamps are appended with `_at`
     - ID primary keys are prefixed with the name of the table. For example, the `ad_group_history` table's ID column is renamed `ad_group_id`.
-    - Foreign keys include the table that they refer to. For example, a keyword's `campaign` will be named `campaign_id`. 
+    - Foreign keys include the table that they refer to. For example, a keyword's `campaign` is named `campaign_id`. 
 
 ## Installation Instructions
-Add the following to your `packages.yml` file:
+Add the following configuration to your `packages.yml` file:
 ```yml
 # packages.yml
 packages:
@@ -41,10 +41,10 @@ vars:
     apple_search_ads_database: your_database_name
     apple_search_ads_schema: your_schema_name 
 ```
-### Disabling models
-It's possible that your Apple Search Ads connector does not sync every table that this package expects. If your syncs exclude certain tables, it is because you either don't use that functionality in Apple Search Ads or actively excluded some tables from your syncs. To disable the corresponding functionality in the package, you must add the relevant variables. By default, all variables are assumed to be true. Add variables for only the tables you would like to disable. 
+### Disable models
+It's possible that your Apple Search Ads connector does not sync every table that this package expects. If your syncs exclude certain tables, it is because you either don't use that functionality in Apple Search Ads or actively excluded some tables from your syncs. To disable the corresponding functionality in the package, you must add the relevant variables. By default, the package assume that all variables are true. Add variables for only the tables you want to disable. 
 
-The `apple_search_ads_using_search_terms` variable below refers to the `search_terms_report` table. The [search match](https://searchads.apple.com/help/campaigns/0006-understand-search-match) functionality must be turned on within specified ad groups in order for there to be data populated in this table. 
+The `apple_search_ads_using_search_terms` variable below refers to the `search_terms_report` table. You must enable the [search match](https://searchads.apple.com/help/campaigns/0006-understand-search-match) function within each ad group to populate this table with data. 
 
 ```yml
 # dbt_project.yml
@@ -57,8 +57,8 @@ vars:
 
 ```
 
-### Changing the Build Schema
-By default this package will build the Apple Search Ads staging models within a schema titled (<target_schema> + `_stg_apple_search_ads`) in your target database. If this is not where you would like your Apple Search Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
+### Change the Build Schema
+By default, this package builds the Apple Search Ads staging models within a schema titled (<target_schema> + `_stg_apple_search_ads`) in your target database. If this is not where you would like your Apple Search Ads staging data to be written to, add the following configuration to your `dbt_project.yml` file:
 
 ```yml
 # dbt_project.yml
@@ -78,10 +78,10 @@ on the best workflow for contributing to a package.
 
 ## Database Support
 
-This package has been tested on BigQuery, Snowflake, Redshift, Postgres, and Databricks.
+This package has been tested on BigQuery, Snowflake, Redshift, PostgreSQL, and Databricks.
 
 ### Databricks Dispatch Configuration
-dbt `v0.20.0` introduced a new project-level dispatch configuration that enables an "override" setting for all dispatched macros. If you are using a Databricks destination with this package, you will need to add the dispatch configuration below (or a variation of the below) within your `dbt_project.yml`. This is required in order for the package to accurately search for macros within the `dbt-labs/spark_utils` then the `dbt-labs/dbt_utils` packages respectively.
+dbt `v0.20.0` introduced a new project-level dispatch configuration that enables an "override" setting for all dispatched macros. If you are using a Databricks destination with this package, you need to add the dispatch configuration below (or a variation of that configuration) within your `dbt_project.yml`. This is required in order for the package to accurately search for macros within the `dbt-labs/spark_utils` then the `dbt-labs/dbt_utils` packages respectively.
 
 ```yml
 # dbt_project.yml
