@@ -37,11 +37,7 @@ seeds:
     keyword_history_data:
       +column_types:
         modification_time: timestamp
-    creative_set_report_data:
-      +column_types:
-        modification_time: timestamp
-        creation_time: timestamp
-
+        
 dispatch:
   - macro_namespace: dbt_utils
     search_order: ['spark_utils', 'dbt_utils']
