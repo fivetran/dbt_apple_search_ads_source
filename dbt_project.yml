@@ -23,7 +23,7 @@ vars:
 
 models:
   apple_search_ads_source:
-    materialized: table
     +schema: apple_search_ads_source
+    +materialized: table
     tmp:
-      materialized: view
+      +materialized: view
