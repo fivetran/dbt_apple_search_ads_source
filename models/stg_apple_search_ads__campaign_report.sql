@@ -22,7 +22,6 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
         id as campaign_id,
         date as date_day,
         conversions,
@@ -32,6 +31,9 @@ final as (
         new_downloads,
         redownloads,
         taps
+        {% for metric in var('apple_search_ads__campaign_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from fields
 )
 

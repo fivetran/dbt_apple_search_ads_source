@@ -22,7 +22,6 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
         id as organization_id,
         currency,
         payment_model,

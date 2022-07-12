@@ -23,8 +23,7 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
-        _fivetran_id,
+        fivetran_id,
         ad_group_id,
         campaign_id,
         date as date_day,
@@ -43,6 +42,9 @@ final as (
         taps,
         new_downloads,
         redownloads
+        {% for metric in var('apple_search_ads__search_term_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from fields
     {% if target.type == 'snowflake' -%}
         where deleted = 'false' and ad_group_deleted = 'false'

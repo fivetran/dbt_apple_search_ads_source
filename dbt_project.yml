@@ -19,6 +19,6 @@ vars:
 models:
   apple_search_ads_source:
     materialized: table
-    +schema: stg_apple_search_ads
+    +schema: apple_search_ads_source
     tmp:
       materialized: view

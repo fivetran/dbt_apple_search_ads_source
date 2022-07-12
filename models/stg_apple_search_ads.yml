@@ -9,8 +9,6 @@ models:
             - ad_group_id
             - modified_at
     columns:
-      - name: _fivetran_synced
-        description: Timestamp of when the record was synced by Fivetran
       - name: modified_at
         description: Timestamp of when the ad group object was last modified
       - name: is_most_recent_record
@@ -44,8 +42,6 @@ models:
             - ad_group_id
             - date_day
     columns:
-      - name: _fivetran_synced
-        description: Timestamp of when the record was synced by Fivetran
       - name: ad_group_id
         description: Ad group ID associated with the record
         tests: 
@@ -75,8 +71,6 @@ models:
             - campaign_id
             - modified_at
     columns:
-      - name: _fivetran_synced
-        description: Timestamp of when the record was synced by Fivetran
       - name: modified_at
         description: Timestamp of when the campaign object was last modified
       - name: is_most_recent_record
@@ -108,8 +102,6 @@ models:
             - campaign_id
             - date_day
     columns:
-      - name: _fivetran_synced
-        description: Timestamp of when the record was synced by Fivetran
       - name: campaign_id
         description: Campaign ID associated with the record
         tests: 
@@ -140,8 +132,6 @@ models:
             - keyword_id
             - modified_at
     columns:
-      - name: _fivetran_synced
-        description: Timestamp of when the record was synced by Fivetran
       - name: modified_at
         description: Timestamp of when the keyword object was last modified
       - name: is_most_recent_record
@@ -173,8 +163,6 @@ models:
             - keyword_id
             - date_day
     columns:
-      - name: _fivetran_synced
-        description: Timestamp of when the record was synced by Fivetran
       - name: keyword_id
         description: Keyword ID associated with the record
         tests:
@@ -199,8 +187,6 @@ models:
   - name: stg_apple_search_ads__organization
     description: Organization information
     columns:
-      - name: _fivetran_synced
-        description: Timestamp of when the record was synced by Fivetran
       - name: organization_id
         description: Organization ID associated with the record
         tests:
@@ -223,8 +209,6 @@ models:
             - _fivetran_id
             - date_day
     columns:
-      - name: _fivetran_synced
-        description: Timestamp of when the record was synced by Fivetran
       - name: _fivetran_id
         description: A Fivetran internal unique id that helps us avoid duplicate rows in primary keyless tables
       - name: ad_group_id

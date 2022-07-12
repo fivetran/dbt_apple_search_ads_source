@@ -5,14 +5,19 @@ sources:
   - name: apple_search_ads
     schema: "{{ var('apple_search_ads_schema', 'apple_search_ads') }}"
     database: "{% if target.type != 'spark'%}{{ var('apple_search_ads_database', target.database) }}{% endif %}"
+
     loader: Fivetran
     loaded_at_field: _fivetran_synced
+
+    freshness: 
+      warn_after: {count: 48, period: hour}
+      error_after: {count: 168, period: hour}
+
     tables:
       - name: ad_group_history
         description: Ad group history
+        identifier: "{{ var('apple_search_ads_ad_group_history_identifier', 'ad_group_history') }}"
         columns:
-          - name: _fivetran_synced
-            description: Timestamp of when the record was synced by Fivetran
           - name: modification_time
             description: Timestamp of when the ad group object was last modified
           - name: id
@@ -36,9 +41,8 @@ sources:
       
       - name: ad_group_report
         description: Ad group daily metric reporting
+        identifier: "{{ var('apple_search_ads_ad_group_report_identifier', 'ad_group_report') }}"
         columns:
-          - name: _fivetran_synced
-            description: Timestamp of when the record was synced by Fivetran
           - name: ad_group_id
             description: Ad group ID associated with the record
           - name: date
@@ -60,9 +64,8 @@ sources:
           
       - name: campaign_history
         description: Campaign history
+        identifier: "{{ var('apple_search_ads_campaign_history_identifier', 'campaign_history') }}"
         columns:
-          - name: _fivetran_synced
-            description: Timestamp of when the record was synced by Fivetran
           - name: modification_time
             description: Timestamp of when the campaign object was last modified
           - name: id
@@ -84,9 +87,8 @@ sources:
       
       - name: campaign_report
         description: Campaign daily metric reporting
+        identifier: "{{ var('apple_search_ads_campaign_report_identifier', 'campaign_report') }}"
         columns:
-          - name: _fivetran_synced
-            description: Timestamp of when the record was synced by Fivetran
           - name: id
             description: Campaign ID associated with the record
           - name: date
@@ -108,9 +110,8 @@ sources:
           
       - name: keyword_history
         description: Keyword history
+        identifier: "{{ var('apple_search_ads_keyword_history_identifier', 'keyword_history') }}"
         columns:
-          - name: _fivetran_synced
-            description: Timestamp of when the record was synced by Fivetran
           - name: modification_time
             description: Timestamp of when the keyword object was last modified
           - name: id
@@ -132,9 +133,8 @@ sources:
 
       - name: keyword_report
         description: Keyword daily metric reporting
+        identifier: "{{ var('apple_search_ads_keyword_report_identifier', 'keyword_report') }}"
         columns:
-          - name: _fivetran_synced
-            description: Timestamp of when the record was synced by Fivetran
           - name: id
             description: Keyword ID associated with the record
           - name: date
@@ -156,9 +156,8 @@ sources:
 
       - name: organization
         description: Organization information
+        identifier: "{{ var('apple_search_ads_organization_identifier', 'organization') }}"
         columns:
-          - name: _fivetran_synced
-            description: Timestamp of when the record was synced by Fivetran
           - name: organization_id
             description: Organization ID associated with the record
           - name: currency
@@ -172,9 +171,8 @@ sources:
 
       - name: search_term_report
         description: Search Matches daily reporting
+        identifier: "{{ var('apple_search_ads_search_term_report_identifier', 'search_term_report') }}"
         columns:
-          - name: _fivetran_synced
-            description: Timestamp of when the record was synced by Fivetran
           - name: _fivetran_id
             description: A Fivetran internal unique id that helps us avoid duplicate rows in primary keyless tables
           - name: ad_group_id

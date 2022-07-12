@@ -22,7 +22,6 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
         modification_time as modified_at,
         row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record,
         id as keyword_id,
