@@ -16,6 +16,11 @@ vars:
     search_term_report: "{{ source('apple_search_ads', 'search_term_report') }}"
     apple_search_ads__using_search_terms: true
 
+  apple_search_ads__ad_group_passthrough_metrics: []
+  apple_search_ads__campaign_passthrough_metrics: []
+  apple_search_ads__keyword_passthrough_metrics: [] 
+  apple_search_ads__search_term_passthrough_metrics: []
+
 models:
   apple_search_ads_source:
     materialized: table
