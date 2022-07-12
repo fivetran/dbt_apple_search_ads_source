@@ -186,12 +186,13 @@ models:
 
   - name: stg_apple_search_ads__organization
     description: Organization information
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - organization_id
     columns:
       - name: organization_id
         description: Organization ID associated with the record
-        tests:
-          - unique
-          - not_null
       - name: currency
         description: Specified currency for respective organization
       - name: payment_model
