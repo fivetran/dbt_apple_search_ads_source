@@ -29,3 +29,9 @@ seeds:
 dispatch:
   - macro_namespace: dbt_utils
     search_order: ['spark_utils', 'dbt_utils']
+
+models:
+  apple_search_ads_source:
+    +materialized: table
+    tmp:
+      +materialized: table
