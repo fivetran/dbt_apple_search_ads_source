@@ -53,7 +53,7 @@ integration_tests:
       password: "{{ env_var('CI_POSTGRES_DBT_PASS') }}"
       port: 5432
       dbname: "{{ env_var('CI_POSTGRES_DBT_DATABASE') }}"
-      schema: apple_search_ads_source_integration_tests
+      schema: apple_search_ads_source_integration_tests_2
       threads: 8
       keepalives_idle: 0
       sslmode: prefer
