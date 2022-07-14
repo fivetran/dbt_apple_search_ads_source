@@ -1,12 +1,12 @@
 config-version: 2
 
-name: 'apple_search_ads_source_integration_tests_2'
+name: 'apple_search_ads_source_integration_tests'
 version: '0.1.0'
 
 profile: 'integration_tests' 
 
 vars:
-  apple_search_ads_schema: apple_search_ads_source_integration_tests_2
+  apple_search_ads_schema: apple_search_ads_source_integration_tests
   apple_search_ads_apple_search_ads__using_search_terms: true
 
   apple_search_ads_organization_identifier: "organization_data"
@@ -24,9 +24,10 @@ seeds:
   +quote_columns: "{{ true if target.type == 'redshift' else false }}"
   apple_search_ads_source_integration_tests:
     +column_types:
-      modification_time: timestamp
-      start_time: timestamp
-      end_time: timestamp
+      modification_time: "timestamp"
+      start_time: "timestamp"
+      end_time: "timestamp"
+      creation_time: "timestamp"
         
 dispatch:
   - macro_namespace: dbt_utils
