@@ -81,7 +81,7 @@ sources:
           - name: status
             description: The current status of the ad, values include ENABLED and PAUSED
       
-      - name: ad_report
+      - name: ad_level_report
         description: Ad daily metric reporting
         identifier: "{{ var('apple_search_ads_ad_report_identifier', 'ad_level_report') }}"
         columns:
