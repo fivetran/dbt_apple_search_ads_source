@@ -31,7 +31,7 @@ jobs:
             dbt deps
             dbt seed --target redshift --full-refresh
             dbt run --target redshift --full-refresh
-            dbt run --vars '{apple_search_ads__using_search_terms: false}' --target redshift
+            dbt run --vars '{apple_search_ads__using_search_terms: true}' --target redshift
             dbt test --target redshift
       - run:
           name: "Run Tests - Snowflake"
@@ -42,7 +42,7 @@ jobs:
             dbt deps
             dbt seed --target snowflake --full-refresh
             dbt run --target snowflake --full-refresh
-            dbt run --vars '{apple_search_ads__using_search_terms: false}' --target snowflake --full-refresh
+            dbt run --vars '{apple_search_ads__using_search_terms: true}' --target snowflake --full-refresh
             dbt test --target snowflake
       - run:
           name: "Run Tests - BigQuery"
@@ -56,7 +56,7 @@ jobs:
             dbt deps
             dbt seed --target bigquery --full-refresh
             dbt run --target bigquery --full-refresh
-            dbt run --vars '{apple_search_ads__using_search_terms: false}' --target bigquery --full-refresh
+            dbt run --vars '{apple_search_ads__using_search_terms: true}' --target bigquery --full-refresh
             dbt test --target bigquery
       - run:
           name: "Run Tests - Spark"
@@ -67,7 +67,7 @@ jobs:
             dbt deps
             dbt seed --target spark --full-refresh
             dbt run --target spark --full-refresh
-            dbt run --vars '{apple_search_ads__using_search_terms: false}' --target spark
+            dbt run --vars '{apple_search_ads__using_search_terms: true}' --target spark
             dbt test --target spark
       - run:
           name: "Run Tests - Postgres"
@@ -78,5 +78,5 @@ jobs:
             dbt deps
             dbt seed --target postgres --full-refresh
             dbt run --target postgres --full-refresh
-            dbt run --vars '{apple_search_ads__using_search_terms: false}' --target postgres --full-refresh
+            dbt run --vars '{apple_search_ads__using_search_terms: true}' --target postgres --full-refresh
             dbt test --target postgres

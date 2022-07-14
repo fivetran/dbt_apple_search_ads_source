@@ -16,8 +16,7 @@ vars:
     keyword_history: "{{ source('apple_search_ads', 'keyword_history') }}"
     keyword_report: "{{ source('apple_search_ads', 'keyword_report') }}"
     search_term_report: "{{ source('apple_search_ads', 'search_term_report') }}"
-    apple_search_ads__using_search_terms: true
-
+    
   apple_search_ads__ad_group_passthrough_metrics: []
   apple_search_ads__campaign_passthrough_metrics: []
   apple_search_ads__ad_passthrough_metrics: []
