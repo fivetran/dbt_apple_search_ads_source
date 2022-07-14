@@ -22,7 +22,7 @@ final as (
     select 
         creation_time as created_at,
         modification_time as modified_at,
-        org_id as oranization_id,
+        org_id as organization_id,
         campaign_id,
         ad_group_id,
         name as ad_name,
