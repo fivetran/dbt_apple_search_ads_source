@@ -32,10 +32,6 @@ sources:
             description: Ad group name
           - name: organization_id
             description: Organization ID associated with the record
-          - name: serving_state_reasons
-            description: When an ad group is not running, list of reasons will be returned as strings
-          - name: serving_status
-            description: Whether ad group is serving or not
           - name: status
             description: The current status of the ad group, values include ENABLED and PAUSED
       
@@ -47,6 +43,58 @@ sources:
             description: Ad group ID associated with the record
           - name: date
             description: Date for daily report aggregation
+          - name: impressions
+            description: Number of times your ad appeared in App Store search results
+          - name: local_spend_amount
+            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
+          - name: local_spend_currency
+            description: This currency value should match the respective organization's currency value
+          - name: new_downloads
+            description: App downloads from new users who have never before installed the respective app
+          - name: redownloads
+            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device
+          - name: taps
+            description: The number of times ad was tapped by users within the reporting time period
+
+      - name: ad_history
+        description: Ad history
+        identifier: "{{ var('apple_search_ads_ad_history_identifier', 'ad_history') }}"
+        columns:
+          - name: creation_time
+            description: Timestamp of when ad was created.
+          - name: modification_time
+            description: Timestamp of when the ad object was last modified
+          - name: org_id
+            description: Organization ID associated with the record
+          - name: campaign_id
+            description: Campaign ID associated with the record.
+          - name: ad_group_id
+            description: Ad group ID associated with the record
+          - name: name
+            description: Ad name associated with the record
+          - name: id
+            description: Ad ID associated with the record
+          - name: creative_id
+            description: Creative ID associated with the record.
+          - name: creative_type
+            description: Creative type associated with the record.
+          - name: status
+            description: The current status of the ad, values include ENABLED and PAUSED
+      
+      - name: ad_report
+        description: Ad daily metric reporting
+        identifier: "{{ var('apple_search_ads_ad_report_identifier', 'ad_level_report') }}"
+        columns:
+          - name: date
+            description: Date for daily report aggregation
+          - name: campaign_id
+            description: Campaign ID associated with the record.
+          - name: ad_group_id
+            description: Ad group ID associated with the record
+          - name: ad_id
+            description: Ad ID associated with the record
+          - name: creative_id
+            description: Creative ID associated with the record.
           - name: impressions
             description: Number of times your ad appeared in App Store search results
           - name: local_spend_amount
@@ -76,10 +124,6 @@ sources:
             description: Campaign name for the record
           - name: organization_id
             description: Organization ID associated with the record
-          - name: serving_state_reasons
-            description: When a campaign is not running, list of reasons will be returned as strings
-          - name: serving_status
-            description: Whether campaign is serving or not
           - name: status
             description: The current status of the campaign, values include ENABLED and PAUSED
       

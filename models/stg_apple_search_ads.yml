@@ -25,10 +25,6 @@ models:
         description: Ad group name
       - name: organization_id
         description: Organization ID associated with the record
-      - name: serving_state_reasons
-        description: When an ad group is not running, list of reasons will be returned as strings
-      - name: serving_status
-        description: Whether ad group is serving or not
       - name: status
         description: The current status of the ad group, values include ENABLED and PAUSED
 
@@ -79,10 +75,6 @@ models:
         description: Campaign name for the record
       - name: organization_id
         description: Organization ID associated with the record
-      - name: serving_state_reasons
-        description: When a campaign is not running, list of reasons will be returned as strings
-      - name: serving_status
-        description: Whether campaign is serving or not
       - name: status
         description: The current status of the campaign, values include ENABLED and PAUSED
         
