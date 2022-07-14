@@ -47,8 +47,6 @@ sources:
             description: Ad group ID associated with the record
           - name: date
             description: Date for daily report aggregation
-          - name: conversions
-            description: Sum of new_downloads and redownloads
           - name: impressions
             description: Number of times your ad appeared in App Store search results
           - name: local_spend_amount
@@ -93,8 +91,6 @@ sources:
             description: Campaign ID associated with the record
           - name: date
             description: Date for daily report aggregation
-          - name: conversions
-            description: Sum of new_downloads and redownloads
           - name: impressions
             description: Number of times your ad appeared in App Store search results
           - name: local_spend_amount
@@ -139,8 +135,6 @@ sources:
             description: Keyword ID associated with the record
           - name: date
             description: Date for daily report aggregation
-          - name: conversions
-            description: Sum of new_downloads and redownloads
           - name: impressions
             description: Number of times your ad appeared in App Store search results
           - name: local_spend_amount

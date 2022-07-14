@@ -22,9 +22,8 @@ fields as (
 final as (
     
     select 
-        id as keyword_id,
         date as date_day,
-        conversions,
+        id as keyword_id,
         impressions,
         local_spend_amount as spend,
         local_spend_currency as currency,

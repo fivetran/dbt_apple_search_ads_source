@@ -22,21 +22,19 @@ fields as (
 final as (
     select 
         modification_time as modified_at,
-        row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record,
-        id as ad_group_id,
+        organization_id,
         campaign_id,
+        name as ad_group_name,
+        id as ad_group_id,
+        status as ad_group_status,
         start_time as start_at,
         end_time as end_at,
-        name as ad_group_name,
-        organization_id,
-        serving_state_reasons,
-        serving_status,
-        status
+        row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record
     from fields
     {% if target.type == 'snowflake' -%}
-        where deleted = 'false'
+    where deleted = 'false'
     {% else -%}
-        where deleted is false
+    where not deleted
     {% endif %}
 )
 

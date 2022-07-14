@@ -22,9 +22,8 @@ fields as (
 final as (
     
     select
-        ad_group_id,
         date as date_day, 
-        conversions,
+        ad_group_id,
         impressions,
         local_spend_amount as spend,
         local_spend_currency as currency,

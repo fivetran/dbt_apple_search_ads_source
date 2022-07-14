@@ -23,20 +23,20 @@ final as (
     
     select 
         modification_time as modified_at,
-        row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record,
-        id as keyword_id,
         campaign_id,
         ad_group_id,
+        id as keyword_id,
         bid_amount, 
         bid_currency,
         match_type,
-        status,
-        text as keyword_text
+        status as keyword_status,
+        text as keyword_text,
+        row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record
     from fields
     {% if target.type == 'snowflake' -%}
-        where deleted = 'false'
+    where deleted = 'false'
     {% else -%}
-        where deleted is false
+    where not deleted
     {% endif %}
 )
 

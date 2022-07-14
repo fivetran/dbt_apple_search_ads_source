@@ -23,10 +23,10 @@ fields as (
 final as (
     
     select 
-        _fivetran_id,
-        ad_group_id,
-        campaign_id,
         date as date_day,
+        _fivetran_id,
+        campaign_id,
+        ad_group_id,
         ad_group_name,
         bid_amount_amount as bid_amount,
         bid_amount_currency as bid_currency,
@@ -47,9 +47,9 @@ final as (
         {% endfor %}
     from fields
     {% if target.type == 'snowflake' -%}
-        where deleted = 'false' and ad_group_deleted = 'false'
+    where deleted = 'false' and ad_group_deleted = 'false'
     {% else -%}
-        where deleted is false and ad_group_deleted is false
+    where not deleted and not ad_group_deleted
     {% endif %}
 )
 

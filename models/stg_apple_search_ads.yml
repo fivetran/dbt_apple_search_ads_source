@@ -15,8 +15,6 @@ models:
         description: Boolean indicating whether record was the most recent instance
       - name: ad_group_id
         description: Ad group ID associated with the record
-        tests:
-          - not_null
       - name: campaign_id
         description: Campaign ID associated with the record
       - name: start_at
@@ -44,12 +42,8 @@ models:
     columns:
       - name: ad_group_id
         description: Ad group ID associated with the record
-        tests: 
-          - not_null
       - name: date_day
         description: Date for daily report aggregation
-      - name: conversions
-        description: Sum of new_downloads and redownloads
       - name: impressions
         description: Number of times your ad appeared in App Store search results
       - name: spend
@@ -77,8 +71,6 @@ models:
         description: Boolean representing whether a record is the most recent version of that record.
       - name: campaign_id
         description: Campaign ID associated with the record
-        tests: 
-          - not_null
       - name: start_at
         description: The designated ad group start time (ad group with the earliest start time associated with this campaign)
       - name: end_at
@@ -104,12 +96,8 @@ models:
     columns:
       - name: campaign_id
         description: Campaign ID associated with the record
-        tests: 
-          - not_null
       - name: date_day
         description: Date for daily report aggregation
-      - name: conversions
-        description: Sum of new_downloads and redownloads
       - name: impressions
         description: Number of times your ad appeared in App Store search results
       - name: spend
@@ -138,8 +126,6 @@ models:
         description: Boolean representing whether a record is the most recent version of that record.
       - name: keyword_id
         description: Keyword ID associated with the record
-        tests:
-          - not_null
       - name: campaign_id
         description: Campaign ID associated with the record
       - name: ad_group_id
@@ -165,12 +151,8 @@ models:
     columns:
       - name: keyword_id
         description: Keyword ID associated with the record
-        tests:
-          - not_null
       - name: date_day
         description: Date for daily report aggregation
-      - name: conversions
-        description: Sum of new_downloads and redownloads
       - name: impressions
         description: Number of times your ad appeared in App Store search results
       - name: spend

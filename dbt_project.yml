@@ -11,6 +11,8 @@ vars:
     campaign_report: "{{ source('apple_search_ads', 'campaign_report') }}"
     ad_group_history: "{{ source('apple_search_ads', 'ad_group_history') }}"
     ad_group_report: "{{ source('apple_search_ads', 'ad_group_report') }}"
+    ad_history: "{{ source('apple_search_ads', 'ad_history') }}"
+    ad_report: "{{ source('apple_search_ads', 'ad_level_report') }}"
     keyword_history: "{{ source('apple_search_ads', 'keyword_history') }}"
     keyword_report: "{{ source('apple_search_ads', 'keyword_report') }}"
     search_term_report: "{{ source('apple_search_ads', 'search_term_report') }}"
@@ -18,6 +20,7 @@ vars:
 
   apple_search_ads__ad_group_passthrough_metrics: []
   apple_search_ads__campaign_passthrough_metrics: []
+  apple_search_ads__ad_passthrough_metrics: []
   apple_search_ads__keyword_passthrough_metrics: [] 
   apple_search_ads__search_term_passthrough_metrics: []
 
