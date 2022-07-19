@@ -85,9 +85,12 @@ models:
           combination_of_columns:
             - ad_id
             - date_day
+            - _fivetran_synced
     columns:
       - name: date_day
         description: Date for daily report aggregation.
+      - name: _fivetran_synced
+        description: Timestamp of when a record was last synced. 
       - name: campaign_id
         description: Campaign ID associated with the record.
       - name: ad_group_id
