@@ -15,237 +15,231 @@ sources:
 
     tables:
       - name: ad_group_history
-        description: Ad group history
+        description: Each record represents a version of an ad group in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_ad_group_history_identifier', 'ad_group_history') }}"
         columns:
           - name: modification_time
-            description: Timestamp of when the ad group object was last modified
+            description: Timestamp of when the ad group object was last modified.
           - name: id
-            description: Ad group ID associated with the record
+            description: Ad group ID associated with the record.
           - name: campaign_id
-            description: Campaign ID associated with the record
+            description: Campaign ID associated with the record.
           - name: start_time
-            description: Timestamp of designated ad group start time
+            description: Timestamp of designated ad group start time.
           - name: end_time
-            description: The designated ad group end time
+            description: The designated ad group end time.
           - name: name
-            description: Ad group name
+            description: Ad group name.
           - name: organization_id
-            description: Organization ID associated with the record
+            description: Organization ID associated with the record.
           - name: status
-            description: The current status of the ad group, values include ENABLED and PAUSED
+            description: The current status of the ad group, values include ENABLED and PAUSED.
       
       - name: ad_group_report
-        description: Ad group daily metric reporting
+        description: Each record represents the daily performance of an ad group in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_ad_group_report_identifier', 'ad_group_report') }}"
         columns:
           - name: ad_group_id
-            description: Ad group ID associated with the record
+            description: Ad group ID associated with the record.
           - name: date
-            description: Date for daily report aggregation
+            description: Date for daily report aggregation.
           - name: impressions
-            description: Number of times your ad appeared in App Store search results
+            description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
-            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
+            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign.
           - name: local_spend_currency
-            description: This currency value should match the respective organization's currency value
+            description: This currency value should match the respective organization's currency value.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app
+            description: App downloads from new users who have never before installed the respective app.
           - name: redownloads
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device
+            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
           - name: taps
-            description: The number of times ad was tapped by users within the reporting time period
+            description: The number of times ad was tapped by users within the reporting time period.
 
       - name: ad_history
-        description: Ad history
+        description: Each record represents a version of an ad in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_ad_history_identifier', 'ad_history') }}"
         columns:
           - name: creation_time
             description: Timestamp of when ad was created.
           - name: modification_time
-            description: Timestamp of when the ad object was last modified
+            description: Timestamp of when the ad object was last modified.
           - name: org_id
-            description: Organization ID associated with the record
+            description: Organization ID associated with the record.
           - name: campaign_id
             description: Campaign ID associated with the record.
           - name: ad_group_id
-            description: Ad group ID associated with the record
+            description: Ad group ID associated with the record.
           - name: name
-            description: Ad name associated with the record
+            description: Ad name associated with the record.
           - name: id
-            description: Ad ID associated with the record
-          - name: creative_id
-            description: Creative ID associated with the record.
-          - name: creative_type
-            description: Creative type associated with the record.
+            description: Ad ID associated with the record.
           - name: status
-            description: The current status of the ad, values include ENABLED and PAUSED
+            description: The current status of the ad, values include ENABLED and PAUSED.
       
       - name: ad_level_report
-        description: Ad daily metric reporting
+        description: Each record represents the daily performance of an ad in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_ad_report_identifier', 'ad_level_report') }}"
         columns:
           - name: date
-            description: Date for daily report aggregation
+            description: Date for daily report aggregation.
           - name: campaign_id
             description: Campaign ID associated with the record.
           - name: ad_group_id
             description: Ad group ID associated with the record
           - name: ad_id
-            description: Ad ID associated with the record
-          - name: creative_id
-            description: Creative ID associated with the record.
+            description: Ad ID associated with the record.
           - name: impressions
-            description: Number of times your ad appeared in App Store search results
+            description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
-            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
+            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign.
           - name: local_spend_currency
-            description: This currency value should match the respective organization's currency value
+            description: This currency value should match the respective organization's currency value.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app
+            description: App downloads from new users who have never before installed the respective app.
           - name: redownloads
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device
+            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
           - name: taps
-            description: The number of times ad was tapped by users within the reporting time period
+            description: The number of times ad was tapped by users within the reporting time period.
           
       - name: campaign_history
-        description: Campaign history
+        description: Each record represents a version of a campaign in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_campaign_history_identifier', 'campaign_history') }}"
         columns:
           - name: modification_time
-            description: Timestamp of when the campaign object was last modified
+            description: Timestamp of when the campaign object was last modified.
           - name: id
-            description: Campaign ID associated with the record
+            description: Campaign ID associated with the record.
           - name: start_time
-            description: The designated ad group start time (ad group with the earliest start time associated with this campaign)
+            description: The designated ad group start time (ad group with the earliest start time associated with this campaign).
           - name: end_time
-            description: The designated campaign end time (ad group with the latest start time associated with this campaign)
+            description: The designated campaign end time (ad group with the latest start time associated with this campaign).
           - name: name
-            description: Campaign name for the record
+            description: Campaign name for the record.
           - name: organization_id
-            description: Organization ID associated with the record
+            description: Organization ID associated with the record.
           - name: status
-            description: The current status of the campaign, values include ENABLED and PAUSED
+            description: The current status of the campaign, values include ENABLED and PAUSED.
       
       - name: campaign_report
-        description: Campaign daily metric reporting
+        description: Each record represents the daily performance of a campaign in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_campaign_report_identifier', 'campaign_report') }}"
         columns:
           - name: id
-            description: Campaign ID associated with the record
+            description: Campaign ID associated with the record.
           - name: date
-            description: Date for daily report aggregation
+            description: Date for daily report aggregation.
           - name: impressions
-            description: Number of times your ad appeared in App Store search results
+            description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
-            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
+            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign.
           - name: local_spend_currency
-            description: This currency value should match the respective organization's currency value
+            description: This currency value should match the respective organization's currency value.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app
+            description: App downloads from new users who have never before installed the respective app.
           - name: redownloads
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device
+            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
           - name: taps
-            description: The number of times ad was tapped by users within the reporting time period
+            description: The number of times ad was tapped by users within the reporting time period.
           
       - name: keyword_history
-        description: Keyword history
+        description: Each record represents a version of a keyword in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_keyword_history_identifier', 'keyword_history') }}"
         columns:
           - name: modification_time
-            description: Timestamp of when the keyword object was last modified
+            description: Timestamp of when the keyword object was last modified.
           - name: id
-            description: Keyword ID associated with the record
+            description: Keyword ID associated with the record.
           - name: campaign_id
-            description: Campaign ID associated with the record
+            description: Campaign ID associated with the record.
           - name: ad_group_id
-            description: Ad group ID associated with the record
+            description: Ad group ID associated with the record.
           - name: bid_amount
-            description: The bid amount to display your ad for the matching text value
+            description: The bid amount to display your ad for the matching text value.
           - name: bid_currency
-            description: This currency value should match the respective organization's currency value
+            description: This currency value should match the respective organization's currency value.
           - name: match_type
-            description: Controls how ads are matched to user searches; EXACT or BROAD
+            description: Controls how ads are matched to user searches; EXACT or BROAD.
           - name: status
-            description: The current status of the keyword, values include ENABLED and PAUSED
+            description: The current status of the keyword, values include ENABLED and PAUSED.
           - name: text
-            description: The word or phrase to match in user searches, to show respective ad
+            description: The word or phrase to match in user searches, to show respective ad.
 
       - name: keyword_report
-        description: Keyword daily metric reporting
+        description: Each record represents the daily performance of a keyword in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_keyword_report_identifier', 'keyword_report') }}"
         columns:
           - name: id
-            description: Keyword ID associated with the record
+            description: Keyword ID associated with the record.
           - name: date
-            description: Date for daily report aggregation
+            description: Date for daily report aggregation.
           - name: impressions
-            description: Number of times your ad appeared in App Store search results
+            description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
-            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
+            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign.
           - name: local_spend_currency
-            description: This currency value should match the respective organization's currency value
+            description: This currency value should match the respective organization's currency value.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app
+            description: App downloads from new users who have never before installed the respective app.
           - name: redownloads
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device
+            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
           - name: taps
-            description: The number of times ad was tapped by users within the reporting time period
+            description: The number of times ad was tapped by users within the reporting time period.
 
       - name: organization
-        description: Organization information
+        description: Each record represents an organization in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_organization_identifier', 'organization') }}"
         columns:
           - name: organization_id
-            description: Organization ID associated with the record
+            description: Organization ID associated with the record.
           - name: currency
-            description: Specified currency for respective organization
+            description: Specified currency for respective organization.
           - name: payment_model
-            description: Values include 'LOC', 'PAYG' or <empty string> (payment method hasn't been set)
+            description: Values include 'LOC', 'PAYG' or <empty string> (payment method hasn't been set).
           - name: organization_name
-            description: Name of organization
+            description: Name of organization.
           - name: time_zone
-            description: Organization default timezone; values can be ORTZ or UTC
+            description: Organization default timezone; values can be ORTZ or UTC.
 
       - name: search_term_report
-        description: Search Matches daily reporting
+        description: Each record represents the daily performance of a search term in Apple Search Ads.
         identifier: "{{ var('apple_search_ads_search_term_report_identifier', 'search_term_report') }}"
         columns:
           - name: _fivetran_id
-            description: A Fivetran internal unique id that helps us avoid duplicate rows in primary keyless tables
+            description: A Fivetran internal unique id that helps us avoid duplicate rows in primary keyless tables.
           - name: ad_group_id
-            description: Ad group ID associated with the record
+            description: Ad group ID associated with the record.
           - name: campaign_id
-            description: Campaign ID associated with the record
+            description: Campaign ID associated with the record.
           - name: date
-            description: Date for daily report aggregation
+            description: Date for daily report aggregation.
           - name: ad_group_name
-            description: Ad group name
+            description: Ad group name.
           - name: bid_amount_amount
-            description: The bid amount to display your ad for the matching text value
+            description: The bid amount to display your ad for the matching text value.
           - name: bid_amount_currency
-            description: This currency value should match the respective organization's currency value
+            description: This currency value should match the respective organization's currency value.
           - name: keyword
-            description: The word or phrase to match in user searches, to show respective ad
+            description: The word or phrase to match in user searches, to show respective ad.
           - name: keyword_display_status
-            description: The keyword display status can either be ACTIVE or PAUSED
+            description: The keyword display status can either be ACTIVE or PAUSED.
           - name: keyword_id
-            description: Keyword ID associated with the record
+            description: Keyword ID associated with the record.
           - name: local_spend_amount
-            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
+            description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign.
           - name: local_spend_currency
-            description: This currency value should match the respective organization's currency value
+            description: This currency value should match the respective organization's currency value.
           - name: match_type
-            description: Controls how ads are matched to user searches; values include EXACT, BROAD or AUTO
+            description: Controls how ads are matched to user searches; values include EXACT, BROAD or AUTO.
           - name: search_term_source
-            description: The search term source can either be TARGETED or AUTO; if this value is AUTO so will match_type
+            description: The search term source can either be TARGETED or AUTO; if this value is AUTO so will match_type.
           - name: search_term_text
-            description: The word or phrase to match of user searches
+            description: The word or phrase to match of user searches.
           - name: impressions
-            description: Number of times your ad appeared in App Store search results
+            description: Number of times your ad appeared in App Store search results.
           - name: taps
-            description: The number of times ad was tapped by users within the reporting time period
+            description: The number of times ad was tapped by users within the reporting time period.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app
+            description: App downloads from new users who have never before installed the respective app.
           - name: redownloads 
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device
+            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.

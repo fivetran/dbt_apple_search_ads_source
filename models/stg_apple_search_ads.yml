@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_apple_search_ads__ad_group_history
-    description: Ad group history
+    description: Each record represents a version of an ad group in Apple Search Ads.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -29,7 +29,7 @@ models:
         description: The current status of the ad group, values include ENABLED and PAUSED
 
   - name: stg_apple_search_ads__ad_group_report
-    description: Ad group daily metric reporting
+    description: Each record represents the daily performance of an ad group in Apple Search Ads.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -53,8 +53,62 @@ models:
       - name: taps
         description: The number of times ad was tapped by users within the reporting time period
 
+  - name: stg_apple_search_ads__ad_history
+    description: Each record represents a version of an ad in Apple Search Ads.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_id
+            - modified_at
+    columns:
+      - name: creation_at
+        description: Timestamp of when ad was created.
+      - name: modified_at
+        description: Timestamp of when the ad object was last modified.
+      - name: organization_id
+        description: Organization ID associated with the record.
+      - name: campaign_id
+        description: Campaign ID associated with the record.
+      - name: ad_group_id
+        description: Ad group ID associated with the record.
+      - name: ad_name
+        description: Ad name associated with the record.
+      - name: ad_id
+        description: Ad ID associated with the record.
+      - name: ad_status
+        description: The current status of the ad, values include ENABLED and PAUSED.
+  
+  - name: stg_apple_search_ads__ad_report
+    description: Each record represents the daily performance of an ad in Apple Search Ads.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ad_id
+            - date_day
+    columns:
+      - name: date_day
+        description: Date for daily report aggregation.
+      - name: campaign_id
+        description: Campaign ID associated with the record.
+      - name: ad_group_id
+        description: Ad group ID associated with the record
+      - name: ad_id
+        description: Ad ID associated with the record.
+      - name: impressions
+        description: Number of times your ad appeared in App Store search results.
+      - name: spend
+        description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign.
+      - name: currency
+        description: This currency value should match the respective organization's currency value.
+      - name: new_downloads
+        description: App downloads from new users who have never before installed the respective app.
+      - name: redownloads
+        description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
+      - name: taps
+        description: The number of times ad was tapped by users within the reporting time period.
+      
   - name: stg_apple_search_ads__campaign_history
-    description: Campaign history
+    description: Each record represents a version of a campaign in Apple Search Ads.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -79,7 +133,7 @@ models:
         description: The current status of the campaign, values include ENABLED and PAUSED
         
   - name: stg_apple_search_ads__campaign_report
-    description: Campaign daily metric reporting
+    description: Each record represents the daily performance of a campaign in Apple Search Ads.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -105,7 +159,7 @@ models:
   
 
   - name: stg_apple_search_ads__keyword_history
-    description: Keyword history
+    description: Each record represents a version of a keyword in Apple Search Ads.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -134,7 +188,7 @@ models:
         description: The word or phrase to match in user searches, to show respective ad
 
   - name: stg_apple_search_ads__keyword_report
-    description: Keyword daily metric reporting
+    description: Each record represents the daily performance of a keyword in Apple Search Ads.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -159,7 +213,7 @@ models:
         description: The number of times ad was tapped by users within the reporting time period
 
   - name: stg_apple_search_ads__organization
-    description: Organization information
+    description: Each record represents an organization in Apple Search Ads.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -177,7 +231,7 @@ models:
         description: Organization default timezone; values can be ORTZ or UTC
 
   - name: stg_apple_search_ads__search_term_report
-    description: Search Matches daily reporting
+    description: Each record represents the daily performance of a search term in Apple Search Ads.
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
@@ -210,7 +264,7 @@ models:
         description: The sum of costs associated with the number of impressions served; Spend is measured in the currency used in the campaign
       - name: currency
         description: This currency value should match the respective organization's currency value
-      - name: keyword_match_type
+      - name: match_type
         description: Controls how ads are matched to user searches; values include EXACT, BROAD or AUTO
       - name: search_term_source
         description: The search term source can either be TARGETED or AUTO; if this value is AUTO so will match_type

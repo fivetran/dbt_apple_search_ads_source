@@ -12,8 +12,8 @@
 
 # Apple Search Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_apple_search_ads_source/))
 # 📣 What does this dbt package do?
-- Materializes [Apple Search Ads staging tables](https://fivetran.github.io/dbt_apple_search_ads_source/#!/overview/apple_search_ads_source/models/?g_v=1&g_e=seeds) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/apple_search-ads#schemainformation). These staging tables clean, test, and prepare your Apple Search Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/apple_search-ads) for analysis by doing the following:
-  - Name columns for consistency across all packages and for easier analysis
+- Materializes [Apple Search Ads staging tables](https://fivetran.github.io/dbt_apple_search_ads_source/#!/overview/apple_search_ads_source/models/?g_v=1&g_e=seeds) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/apple-search-ads#schemainformation). These staging tables clean, test, and prepare your Apple Search Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/apple-search-ads) for analysis by doing the following:
+  - Names columns for consistency across all packages and for easier analysis
   - Adds freshness tests to source data
   - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
 - Generates a comprehensive data dictionary of your apple_search_ads data through the [dbt docs site](https://fivetran.github.io/dbt_apple_search_ads_source/).
@@ -53,10 +53,12 @@ vars:
 ## (Optional) Step 4: Additional configurations
 ### Passing Through Additional Metrics
 By default, this package will select `taps`, `impressions`, and `cost` from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the following configuration to your `dbt_project.yml` file:
+>Please ensure you exercised due diligence when adding metrics to these models. The metrics added by default (taps, impressions, and spend) have been vetted by the Fivetran team maintaining this package for accuracy. There are metrics included within the source reports, for example metric averages, which may be inaccurately represented at the grain for reports created in this package. You will want to ensure whichever metrics you pass through are indeed appropriate to aggregate at the respective reporting levels provided in this package.
 
 ```yml
 vars:
     apple_search_ads__ad_group_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.ad_group_report
+    apple_search_ads__ad_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.ad_level_report
     apple_search_ads__campaign_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.campaign_report
     apple_search_ads__keyword_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.keyword_report
     apple_search_ads__search_term_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.search_term_report
@@ -65,7 +67,7 @@ vars:
 ### Enabling Addiitonal Models
 It's possible that your Apple Search Ads connector does not sync every table that this package expects. If your syncs exclude certain tables, it is because you either don't use that functionality in Apple Search Ads or actively excluded some tables from your syncs. To enable the corresponding functionality in the package, you must add the relevant variables. By default, the package assumes that all variables are false. Add variables for only the tables you want to enable. 
 
-The `apple_search_ads_using_search_terms` variable below refers to the `search_terms_report` table. You must enable the [search match](https://searchads.apple.com/help/campaigns/0006-understand-search-match) function within each ad group to populate this table with data. 
+The `apple_search_ads__using_search_terms` variable below refers to the `search_terms_report` table. You must enable the [search match](https://searchads.apple.com/help/campaigns/0006-understand-search-match) function within each ad group to populate this table with data. 
 
 ```yml
 # dbt_project.yml

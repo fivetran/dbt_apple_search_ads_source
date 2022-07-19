@@ -35,7 +35,7 @@ final as (
         keyword_id,
         local_spend_amount as spend,
         local_spend_currency as currency,
-        match_type as keyword_match_type,
+        match_type,
         search_term_source,
         search_term_text,
         impressions,

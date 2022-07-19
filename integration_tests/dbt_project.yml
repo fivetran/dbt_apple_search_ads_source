@@ -7,7 +7,7 @@ profile: 'integration_tests'
 
 vars:
   apple_search_ads_schema: apple_search_ads_source_integration_tests
-  apple_search_ads_apple_search_ads__using_search_terms: true
+  apple_search_ads__using_search_terms: True
 
   apple_search_ads_organization_identifier: "organization_data"
   apple_search_ads_campaign_history_identifier: "campaign_history_data"
