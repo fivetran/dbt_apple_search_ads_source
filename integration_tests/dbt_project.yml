@@ -7,8 +7,6 @@ profile: 'integration_tests'
 
 vars:
   apple_search_ads_schema: apple_search_ads_source_integration_tests
-  apple_search_ads__using_search_terms: True
-
   apple_search_ads_organization_identifier: "organization_data"
   apple_search_ads_campaign_history_identifier: "campaign_history_data"
   apple_search_ads_campaign_report_identifier: "campaign_report_data"
@@ -19,6 +17,7 @@ vars:
   apple_search_ads_keyword_history_identifier: "keyword_history_data"
   apple_search_ads_keyword_report_identifier: "keyword_report_data"
   apple_search_ads_search_term_report_identifier: "search_term_report_data"
+  apple_search_ads__using_search_terms: True
 
 seeds:
   +quote_columns: "{{ true if target.type == 'redshift' else false }}"
