@@ -27,6 +27,7 @@ seeds:
       start_time: "timestamp"
       end_time: "timestamp"
       creation_time: "timestamp"
+      _fivetran_synced: "timestamp"
         
 dispatch:
   - macro_namespace: dbt_utils
