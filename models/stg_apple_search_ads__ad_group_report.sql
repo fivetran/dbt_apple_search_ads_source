@@ -3,7 +3,6 @@ with base as (
 
     select * 
     from {{ ref('stg_apple_search_ads__ad_group_report_tmp') }}
-
 ),
 
 fields as (
@@ -15,24 +14,30 @@ fields as (
                 staging_columns=get_ad_group_report_columns()
             )
         }}
-        
+
+        {% for metric in var('apple_search_ads__ad_group_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from base
 ),
 
 final as (
     
     select
-        _fivetran_synced,
-        ad_group_id,
         date as date_day, 
-        conversions,
+        ad_group_id,
         impressions,
         local_spend_amount as spend,
         local_spend_currency as currency,
         new_downloads,
         redownloads,
         taps
+
+        {% for metric in var('apple_search_ads__ad_group_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from fields
 )
 
-select * from final
+select * 
+from final
