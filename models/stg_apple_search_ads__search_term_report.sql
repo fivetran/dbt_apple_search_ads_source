@@ -4,7 +4,6 @@ with base as (
 
     select * 
     from {{ ref('stg_apple_search_ads__search_term_report_tmp') }}
-
 ),
 
 fields as (
@@ -16,7 +15,10 @@ fields as (
                 staging_columns=get_search_term_report_columns()
             )
         }}
-        
+
+        {% for metric in var('apple_search_ads__search_term_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from base
 ),
 
@@ -42,6 +44,7 @@ final as (
         taps,
         new_downloads,
         redownloads
+
         {% for metric in var('apple_search_ads__search_term_passthrough_metrics', []) %}
         , {{ metric }}
         {% endfor %}
@@ -53,4 +56,5 @@ final as (
     {% endif %}
 )
 
-select * from final
+select * 
+from final

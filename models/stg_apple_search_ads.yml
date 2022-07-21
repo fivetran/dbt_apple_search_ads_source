@@ -69,7 +69,7 @@ models:
             - ad_id
             - modified_at
     columns:
-      - name: creation_at
+      - name: created_at
         description: Timestamp of when ad was created.
       - name: modified_at
         description: Timestamp of when the ad object was last modified.

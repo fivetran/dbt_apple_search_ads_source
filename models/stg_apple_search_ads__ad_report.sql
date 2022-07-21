@@ -14,6 +14,10 @@ fields as (
                 staging_columns=get_ad_level_report_columns()
             )
         }}
+
+        {% for metric in var('apple_search_ads__ad_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from base
 ),
 
@@ -31,6 +35,7 @@ final as (
         new_downloads,
         redownloads,
         taps
+
         {% for metric in var('apple_search_ads__ad_passthrough_metrics', []) %}
         , {{ metric }}
         {% endfor %}

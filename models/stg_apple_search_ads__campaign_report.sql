@@ -3,7 +3,6 @@ with base as (
 
     select * 
     from {{ ref('stg_apple_search_ads__campaign_report_tmp') }}
-
 ),
 
 fields as (
@@ -15,7 +14,10 @@ fields as (
                 staging_columns=get_campaign_report_columns()
             )
         }}
-        
+
+        {% for metric in var('apple_search_ads__campaign_passthrough_metrics', []) %}
+        , {{ metric }}
+        {% endfor %}
     from base
 ),
 
@@ -30,10 +32,12 @@ final as (
         new_downloads,
         redownloads,
         taps
+
         {% for metric in var('apple_search_ads__campaign_passthrough_metrics', []) %}
         , {{ metric }}
         {% endfor %}
     from fields
 )
 
-select * from final
+select * 
+from final

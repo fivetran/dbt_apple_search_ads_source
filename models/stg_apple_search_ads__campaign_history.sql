@@ -3,7 +3,6 @@ with base as (
 
     select * 
     from {{ ref('stg_apple_search_ads__campaign_history_tmp') }}
-
 ),
 
 fields as (
@@ -38,4 +37,5 @@ final as (
     {% endif %}
 )
 
-select * from final
+select * 
+from final
