@@ -14,10 +14,6 @@ fields as (
                 staging_columns=get_ad_group_report_columns()
             )
         }}
-
-        {% for metric in var('apple_search_ads__ad_group_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}
     from base
 ),
 
@@ -33,9 +29,7 @@ final as (
         redownloads,
         taps
 
-        {% for metric in var('apple_search_ads__ad_group_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}
+        {{ fivetran_utils.fill_pass_through_columns('apple_search_ads__ad_group_passthrough_metrics') }}
     from fields
 )
 

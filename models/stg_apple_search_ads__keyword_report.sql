@@ -13,11 +13,7 @@ fields as (
                 source_columns=adapter.get_columns_in_relation(ref('stg_apple_search_ads__keyword_report_tmp')),
                 staging_columns=get_keyword_report_columns()
             )
-        }}
-
-        {% for metric in var('apple_search_ads__keyword_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}        
+        }}     
     from base
 ),
 
@@ -33,9 +29,7 @@ final as (
         redownloads,
         taps
 
-        {% for metric in var('apple_search_ads__keyword_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}
+        {{ fivetran_utils.fill_pass_through_columns('apple_search_ads__keyword_passthrough_metrics') }}
     from fields
 )
 

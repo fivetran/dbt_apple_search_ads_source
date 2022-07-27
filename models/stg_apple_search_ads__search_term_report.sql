@@ -15,10 +15,6 @@ fields as (
                 staging_columns=get_search_term_report_columns()
             )
         }}
-
-        {% for metric in var('apple_search_ads__search_term_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}
     from base
 ),
 
@@ -45,9 +41,7 @@ final as (
         new_downloads,
         redownloads
 
-        {% for metric in var('apple_search_ads__search_term_passthrough_metrics', []) %}
-        , {{ metric }}
-        {% endfor %}
+        {{ fivetran_utils.fill_pass_through_columns('apple_search_ads__search_term_passthrough_metrics') }}
     from fields
     {% if target.type == 'snowflake' -%}
     where deleted = 'false' and ad_group_deleted = 'false'

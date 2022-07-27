@@ -14,6 +14,8 @@
     {"name": "taps", "datatype": dbt_utils.type_int()}
 ] %}
 
+{{ fivetran_utils.add_pass_through_columns(columns, var('apple_search_ads__ad_passthrough_metrics')) }}
+
 {{ return(columns) }}
 
 {% endmacro %}
