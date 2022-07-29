@@ -19,6 +19,9 @@ vars:
   apple_search_ads_search_term_report_identifier: "search_term_report_data"
   apple_search_ads__using_search_terms: True
 
+models:
+  +schema: apple_search_ads_source
+  
 seeds:
   +quote_columns: "{{ true if target.type == 'redshift' else false }}"
   apple_search_ads_source_integration_tests:
