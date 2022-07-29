@@ -103,10 +103,6 @@ models:
         description: Date for daily report aggregation.
         tests:
           - not_null
-      - name: _fivetran_synced
-        description: Timestamp of when a record was last synced. 
-        tests:
-          - not_null
       - name: campaign_id
         description: Campaign ID associated with the record.
       - name: ad_group_id
