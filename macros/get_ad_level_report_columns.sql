@@ -1,7 +1,6 @@
 {% macro get_ad_level_report_columns() %}
 
 {% set columns = [
-    {"name": "_fivetran_synced", "datatype": dbt_utils.type_timestamp()},
     {"name": "ad_group_id", "datatype": dbt_utils.type_int()},
     {"name": "ad_id", "datatype": dbt_utils.type_int()},
     {"name": "campaign_id", "datatype": dbt_utils.type_int()},

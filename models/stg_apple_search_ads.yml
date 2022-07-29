@@ -97,7 +97,7 @@ models:
           combination_of_columns:
             - ad_id
             - date_day
-            - _fivetran_synced
+            - ad_group_id
     columns:
       - name: date_day
         description: Date for daily report aggregation.
@@ -111,6 +111,8 @@ models:
         description: Campaign ID associated with the record.
       - name: ad_group_id
         description: Ad group ID associated with the record.
+        tests:
+          - not_null
       - name: ad_id
         description: Ad ID associated with the record.
         tests:

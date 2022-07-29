@@ -1,1 +1,2 @@
-select * from {{ var('keyword_report') }}
+select * 
+from {{ var('keyword_report') }}

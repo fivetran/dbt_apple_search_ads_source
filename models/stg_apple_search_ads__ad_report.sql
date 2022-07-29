@@ -21,7 +21,6 @@ final as (
     
     select 
         date as date_day,
-        _fivetran_synced,
         campaign_id,
         ad_group_id,
         ad_id,

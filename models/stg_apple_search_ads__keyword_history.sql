@@ -32,11 +32,7 @@ final as (
         text as keyword_text,
         row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record
     from fields
-    {% if target.type == 'snowflake' -%}
-    where deleted = 'false'
-    {% else -%}
     where not deleted
-    {% endif %}
 )
 
 select * 
