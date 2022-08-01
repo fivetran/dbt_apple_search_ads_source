@@ -30,7 +30,6 @@ final as (
         end_time as end_at,
         row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record
     from fields
-    where not deleted
 )
 
 select * 

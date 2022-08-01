@@ -43,7 +43,6 @@ final as (
 
         {{ fivetran_utils.fill_pass_through_columns('apple_search_ads__search_term_passthrough_metrics') }}
     from fields
-    where not deleted and not ad_group_deleted
 )
 
 select * 
