@@ -52,18 +52,27 @@ vars:
 
 ## (Optional) Step 4: Additional configurations
 ### Passing Through Additional Metrics
-By default, this package will select `taps`, `impressions`, and `cost` from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the following configuration to your `dbt_project.yml` file:
->Please ensure you exercised due diligence when adding metrics to these models. The metrics added by default (taps, impressions, and spend) have been vetted by the Fivetran team maintaining this package for accuracy. There are metrics included within the source reports, for example metric averages, which may be inaccurately represented at the grain for reports created in this package. You will want to ensure whichever metrics you pass through are indeed appropriate to aggregate at the respective reporting levels provided in this package.
+By default, this package will select `clicks`, `impressions`, and `cost` from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
+
+>**Note** Please ensure you exercised due diligence when adding metrics to these models. The metrics added by default (taps, impressions, and spend) have been vetted by the Fivetran team maintaining this package for accuracy. There are metrics included within the source reports, for example metric averages, which may be inaccurately represented at the grain for reports created in this package. You will want to ensure whichever metrics you pass through are indeed appropriate to aggregate at the respective reporting levels provided in this package.
 
 ```yml
 vars:
-    apple_search_ads__ad_group_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.ad_group_report
-    apple_search_ads__ad_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.ad_level_report
-    apple_search_ads__campaign_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.campaign_report
-    apple_search_ads__keyword_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.keyword_report
-    apple_search_ads__search_term_passthrough_metrics: ['the', 'list', 'of', 'metric', 'columns', 'to', 'include'] # from apple_search_ads.search_term_report
+    apple_search_ads__ad_group_passthrough_metrics: 
+      - name: "new_custom_field"
+        alias: "custom_field"
+      - name: "another_one"
+    apple_search_ads__ad_passthrough_metrics:
+      - name: "this_field"
+    apple_search_ads__campaign_passthrough_metrics:
+      - name: "unique_string_field"
+        alias: "field_id"
+    apple_search_ads__keyword_passthrough_metrics:
+      - name: "that_field"
+    apple_search_ads__search_term_passthrough_metrics:
+      - name: "other_id"
+        alias: "another_id"
 ```
-
 ### Enabling Addiitonal Models
 It's possible that your Apple Search Ads connector does not sync every table that this package expects. If your syncs exclude certain tables, it is because you either don't use that functionality in Apple Search Ads or actively excluded some tables from your syncs. To enable the corresponding functionality in the package, you must add the relevant variables. By default, the package assumes that all variables are false. Add variables for only the tables you want to enable. 
 
