@@ -1,9 +1,9 @@
+{{ config(enabled=var('ad_reporting__apple_search_ads_enabled', True)) }}
 
 with base as (
 
     select * 
     from {{ ref('stg_apple_search_ads__keyword_history_tmp') }}
-
 ),
 
 fields as (
@@ -22,23 +22,18 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
         modification_time as modified_at,
-        row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record,
-        id as keyword_id,
         campaign_id,
         ad_group_id,
+        id as keyword_id,
         bid_amount, 
         bid_currency,
         match_type,
-        status,
-        text as keyword_text
+        status as keyword_status,
+        text as keyword_text,
+        row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record
     from fields
-    {% if target.type == 'snowflake' -%}
-        where deleted = 'false'
-    {% else -%}
-        where deleted is false
-    {% endif %}
 )
 
-select * from final
+select * 
+from final

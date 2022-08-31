@@ -1,1 +1,4 @@
-select * from {{ var('organization') }}
+{{ config(enabled=var('ad_reporting__apple_search_ads_enabled', True)) }}
+
+select * 
+from {{ var('organization') }}

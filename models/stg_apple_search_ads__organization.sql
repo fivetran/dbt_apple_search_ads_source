@@ -1,9 +1,9 @@
+{{ config(enabled=var('ad_reporting__apple_search_ads_enabled', True)) }}
 
 with base as (
 
     select * 
     from {{ ref('stg_apple_search_ads__organization_tmp') }}
-
 ),
 
 fields as (
@@ -22,7 +22,6 @@ fields as (
 final as (
     
     select 
-        _fivetran_synced,
         id as organization_id,
         currency,
         payment_model,
@@ -31,4 +30,5 @@ final as (
     from fields
 )
 
-select * from final
+select * 
+from final

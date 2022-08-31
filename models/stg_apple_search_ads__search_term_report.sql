@@ -1,10 +1,9 @@
-{{ config(enabled=var('apple_search_ads__using_search_terms', True)) }}
+{{ config(enabled=fivetran_utils.enabled_vars(['ad_reporting__apple_search_ads_enabled','apple_search_ads__using_search_terms'])) }}
 
 with base as (
 
     select * 
     from {{ ref('stg_apple_search_ads__search_term_report_tmp') }}
-
 ),
 
 fields as (
@@ -16,18 +15,16 @@ fields as (
                 staging_columns=get_search_term_report_columns()
             )
         }}
-        
     from base
 ),
 
 final as (
     
     select 
-        _fivetran_synced,
-        _fivetran_id,
-        ad_group_id,
-        campaign_id,
         date as date_day,
+        _fivetran_id,
+        campaign_id,
+        ad_group_id,
         ad_group_name,
         bid_amount_amount as bid_amount,
         bid_amount_currency as bid_currency,
@@ -36,19 +33,17 @@ final as (
         keyword_id,
         local_spend_amount as spend,
         local_spend_currency as currency,
-        match_type as keyword_match_type,
+        match_type,
         search_term_source,
         search_term_text,
         impressions,
         taps,
         new_downloads,
         redownloads
+
+        {{ fivetran_utils.fill_pass_through_columns('apple_search_ads__search_term_passthrough_metrics') }}
     from fields
-    {% if target.type == 'snowflake' -%}
-        where deleted = 'false' and ad_group_deleted = 'false'
-    {% else -%}
-        where deleted is false and ad_group_deleted is false
-    {% endif %}
 )
 
-select * from final
+select * 
+from final

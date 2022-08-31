@@ -1,9 +1,9 @@
+{{ config(enabled=var('ad_reporting__apple_search_ads_enabled', True)) }}
 
 with base as (
 
     select * 
     from {{ ref('stg_apple_search_ads__campaign_report_tmp') }}
-
 ),
 
 fields as (
@@ -15,24 +15,24 @@ fields as (
                 staging_columns=get_campaign_report_columns()
             )
         }}
-        
     from base
 ),
 
 final as (
     
     select 
-        _fivetran_synced,
-        id as campaign_id,
         date as date_day,
-        conversions,
+        id as campaign_id,
         impressions,
         local_spend_amount as spend,
         local_spend_currency as currency,
         new_downloads,
         redownloads,
         taps
+
+        {{ fivetran_utils.fill_pass_through_columns('apple_search_ads__campaign_passthrough_metrics') }}
     from fields
 )
 
-select * from final
+select * 
+from final

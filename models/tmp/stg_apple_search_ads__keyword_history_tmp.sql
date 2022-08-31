@@ -1,1 +1,4 @@
-select * from {{ var('keyword_history') }}
+{{ config(enabled=var('ad_reporting__apple_search_ads_enabled', True)) }}
+
+select * 
+from {{ var('keyword_history') }}
