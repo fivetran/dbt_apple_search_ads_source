@@ -1,9 +1,7 @@
 name: 'apple_search_ads_source'
-version: '0.1.2'
+version: '0.2.0'
 config-version: 2
 require-dbt-version: [">=1.0.0", "<2.0.0"]
-
-
 vars:
   apple_search_ads_source:
     organization: "{{ source('apple_search_ads', 'organization') }}"
@@ -16,13 +14,11 @@ vars:
     keyword_history: "{{ source('apple_search_ads', 'keyword_history') }}"
     keyword_report: "{{ source('apple_search_ads', 'keyword_report') }}"
     search_term_report: "{{ source('apple_search_ads', 'search_term_report') }}"
-    
   apple_search_ads__ad_group_passthrough_metrics: []
   apple_search_ads__campaign_passthrough_metrics: []
   apple_search_ads__ad_passthrough_metrics: []
-  apple_search_ads__keyword_passthrough_metrics: [] 
+  apple_search_ads__keyword_passthrough_metrics: []
   apple_search_ads__search_term_passthrough_metrics: []
-
 models:
   apple_search_ads_source:
     +schema: apple_search_ads_source
