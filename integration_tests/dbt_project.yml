@@ -1,10 +1,7 @@
 config-version: 2
-
 name: 'apple_search_ads_source_integration_tests'
-version: '0.1.2'
-
-profile: 'integration_tests' 
-
+version: '0.2.0'
+profile: 'integration_tests'
 vars:
   apple_search_ads_schema: apple_ads_source_integration_tests
   apple_search_ads_organization_identifier: "organization_data"
@@ -17,11 +14,9 @@ vars:
   apple_search_ads_keyword_history_identifier: "keyword_history_data"
   apple_search_ads_keyword_report_identifier: "keyword_report_data"
   apple_search_ads_search_term_report_identifier: "search_term_report_data"
-  apple_search_ads__using_search_terms: True
-
+  apple_search_ads__using_search_terms: true
 models:
   +schema: apple_search_ads_source
-
 seeds:
   +quote_columns: "{{ true if target.type == 'redshift' else false }}"
   apple_search_ads_source_integration_tests:
@@ -30,7 +25,6 @@ seeds:
       start_time: "timestamp"
       end_time: "timestamp"
       creation_time: "timestamp"
-        
 dispatch:
-  - macro_namespace: dbt_utils
-    search_order: ['spark_utils', 'dbt_utils']
+- macro_namespace: dbt_utils
+  search_order: ['spark_utils', 'dbt_utils']
