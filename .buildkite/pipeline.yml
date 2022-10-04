@@ -1,0 +1,75 @@
+steps:
+  - label: "Run Tests - Postgres"
+    key: "run_dbt_postgres"
+    plugins:
+      - docker#v3.13.0:
+          image: "circleci/python:3.7.9-stretch"
+          shell: [ "/bin/bash", "-e", "-c" ]
+          environment:
+            - "BASH_ENV=/tmp/.bashrc"
+            - "CI_POSTGRES_DBT_DATABASE"
+            - "CI_POSTGRES_DBT_DBNAME"
+            - "CI_POSTGRES_DBT_HOST"
+            - "CI_POSTGRES_DBT_PASS"
+            - "CI_POSTGRES_DBT_USER"
+    commands: |
+      scripts/run_models.sh postgres 
+
+  - label: "Run Tests - Snowflake"
+    key: "run_dbt_snowflake"
+    plugins:
+      - docker#v3.13.0:
+          image: "circleci/python:3.7.9-stretch"
+          shell: [ "/bin/bash", "-e", "-c" ]
+          environment:
+            - "BASH_ENV=/tmp/.bashrc"
+            - "CI_SNOWFLAKE_DBT_ACCOUNT"
+            - "CI_SNOWFLAKE_DBT_DATABASE"
+            - "CI_SNOWFLAKE_DBT_PASS"
+            - "CI_SNOWFLAKE_DBT_ROLE"
+            - "CI_SNOWFLAKE_DBT_USER"
+            - "CI_SNOWFLAKE_DBT_WAREHOUSE"
+    commands: |
+      scripts/run_models.sh snowflake
+
+  - label: "Run Tests - BigQuery"
+    key: "run_dbt_bigquery"
+    plugins:
+      - docker#v3.13.0:
+          image: "circleci/python:3.7.9-stretch"
+          shell: [ "/bin/bash", "-e", "-c" ]
+          environment:
+            - "BASH_ENV=/tmp/.bashrc"
+            - "GCLOUD_SERVICE_KEY"
+    commands: |
+      scripts/run_models.sh bigquery
+
+  - label: "Run Tests - Redshift"
+    key: "run_dbt_redshift"
+    plugins:
+      - docker#v3.13.0:
+          image: "circleci/python:3.7.9-stretch"
+          shell: [ "/bin/bash", "-e", "-c" ]
+          environment:
+            - "BASH_ENV=/tmp/.bashrc"
+            - "CI_REDSHIFT_DBT_DBNAME"
+            - "CI_REDSHIFT_DBT_HOST"
+            - "CI_REDSHIFT_DBT_PASS"
+            - "CI_REDSHIFT_DBT_USER"
+    commands: |
+      scripts/run_models.sh redshift
+
+  - label: "Run Tests - Spark"
+    key: "run_dbt_spark"
+    plugins:
+      - docker#v3.13.0:
+          image: "circleci/python:3.7.9-stretch"
+          shell: [ "/bin/bash", "-e", "-c" ]
+          environment:
+            - "BASH_ENV=/tmp/.bashrc"
+            - "CI_SPARK_DBT_CLUSTER"
+            - "CI_SPARK_DBT_HOST"
+            - "CI_SPARK_DBT_ORGANIZATION"
+            - "CI_SPARK_DBT_TOKEN"
+    commands: |
+      scripts/run_models.sh spark
