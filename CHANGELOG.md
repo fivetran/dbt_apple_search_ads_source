@@ -1,7 +1,7 @@
 # dbt_apple_search_ads_source v0.2.0
 
 ## 🚨 Breaking Changes 🚨:
-[PR #14](https://github.com/fivetran/dbt_apple_search_ads/pull/14) includes the following breaking changes:
+[PR #33](https://github.com/fivetran/dbt_apple_search_ads_source/pull/33) includes the following breaking changes:
 - Dispatch update for dbt-utils to dbt-core cross-db macros migration. Specifically `{{ dbt_utils.<macro> }}` have been updated to `{{ dbt.<macro> }}` for the below macros:
     - `any_value`
     - `bool_or`
