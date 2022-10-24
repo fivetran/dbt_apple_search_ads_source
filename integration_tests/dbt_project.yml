@@ -1,7 +1,7 @@
 config-version: 2
 
 name: 'apple_search_ads_source_integration_tests'
-version: '0.1.2'
+version: '0.2.0'
 
 profile: 'integration_tests' 
 
@@ -33,4 +33,4 @@ seeds:
         
 dispatch:
   - macro_namespace: dbt_utils
-    search_order: ['!!!!!!! REPLACE 'spark' WITH 'spark','databricks' OR EQUIV !!!!!!!_utils', 'dbt_utils']
+    search_order: ['spark_utils', 'dbt_utils']
