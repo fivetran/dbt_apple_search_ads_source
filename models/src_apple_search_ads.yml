@@ -207,7 +207,7 @@ sources:
       - name: search_term_report
         description: Each record represents the daily performance of a search term in Apple Search Ads.
         config:
-          enabled: "{{ var('ad_reporting__apple_search_ads_enabled', true) }} and {{ var('apple_search_ads__using_search_terms', false) }}"
+          enabled: "{{ var('ad_reporting__apple_search_ads_enabled', true) }} and {{ var('apple_search_ads__using_search_terms', true) }}"
         identifier: "{{ var('apple_search_ads_search_term_report_identifier', 'search_term_report') }}"
         columns:
           - name: _fivetran_id
