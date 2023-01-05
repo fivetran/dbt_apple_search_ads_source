@@ -3,6 +3,10 @@
 ## 🕷️ Bugfixes 🕷️
 - Updated enabled config for `search_term_report` source to correctly handle `and` operation between invoked vars. [#37](https://github.com/fivetran/dbt_apple_search_ads_source/pull/36)
 
+## Contributors
+
+[@nszoni](https://github.com/nszoni) ([#37](https://github.com/fivetran/dbt_apple_search_ads_source/pull/37))
+
 # dbt_apple_search_ads_source v0.2.0
 
 ## 🚨 Breaking Changes 🚨:
