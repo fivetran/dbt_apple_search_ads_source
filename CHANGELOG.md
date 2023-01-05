@@ -1,3 +1,8 @@
+# dbt_apple_search_ads_source v0.2.1
+
+## 🕷️ Bugfixes 🕷️
+- Updated enabled config for `search_term_report` source to correctly handle `and` operation between invoked vars. [#37](https://github.com/fivetran/dbt_apple_search_ads_source/pull/36)
+
 # dbt_apple_search_ads_source v0.2.0
 
 ## 🚨 Breaking Changes 🚨:
@@ -36,11 +41,6 @@
     - `dbt.current_timestamp_backcompat`
     - `dbt.current_timestamp_in_utc_backcompat`
 - `packages.yml` has been updated to reflect new default `fivetran/fivetran_utils` version, previously `[">=0.3.0", "<0.4.0"]` now `[">=0.4.0", "<0.5.0"]`.
-
-## 🕷️ Bugfixes 🕷️
-- Updated enabled config for `search_term_report` source to correctly handle `and` operation between invoked vars. [#37](https://github.com/fivetran/dbt_apple_search_ads_source/pull/36)
-
-# dbt_apple_search_ads_source v0.1.3
 
 ## 🕷️ Bugfixes 🕷️
 - Updated the default value for `apple_search_ads__using_search_terms` to `true` to be consistent across Ad Reporting and the rest of this package in the `src_apple_search_ads.yml` for the `search_term_report`. [#36](https://github.com/fivetran/dbt_apple_search_ads_source/pull/36)
