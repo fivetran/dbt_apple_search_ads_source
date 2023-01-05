@@ -37,6 +37,9 @@
     - `dbt.current_timestamp_in_utc_backcompat`
 - `packages.yml` has been updated to reflect new default `fivetran/fivetran_utils` version, previously `[">=0.3.0", "<0.4.0"]` now `[">=0.4.0", "<0.5.0"]`.
 
+## 🕷️ Bugfixes 🕷️
+- Updated enabled config for `search_term_report` source to correctly handle `and` operation between invoked vars. [#37](https://github.com/fivetran/dbt_apple_search_ads_source/pull/36)
+
 # dbt_apple_search_ads_source v0.1.3
 
 ## 🕷️ Bugfixes 🕷️
