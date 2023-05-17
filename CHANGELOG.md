@@ -1,9 +1,9 @@
 # dbt_apple_search_ads_source v0.2.2
 ## Bug Fix
-- The `apple_search_ads__search_term_passthrough_metrics` variable was moved to be within the return call of the `get_search_term_report_columns` macro. The previous placement caused an issue where the passthrough metrics would not properly persist to downstream models.
+- The `apple_search_ads__search_term_passthrough_metrics` variable was moved to be within the return call of the `get_search_term_report_columns` macro. The previous placement caused an issue where the passthrough metrics would not properly persist to downstream models. ([PR #42](https://github.com/fivetran/dbt_apple_search_ads_source/pull/42))
 ## Under the Hood:
-- Incorporated the new `fivetran_utils.drop_schemas_automation` macro into the end of each Buildkite integration test job.
-- Updated the pull request [templates](/.github).
+- Incorporated the new `fivetran_utils.drop_schemas_automation` macro into the end of each Buildkite integration test job. ([PR #40](https://github.com/fivetran/dbt_apple_search_ads_source/pull/40))
+- Updated the pull request [templates](/.github). ([PR #40](https://github.com/fivetran/dbt_apple_search_ads_source/pull/40))
 # dbt_apple_search_ads_source v0.2.1
 
 ## 🕷️ Bugfixes 🕷️
