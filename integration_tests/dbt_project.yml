@@ -1,12 +1,12 @@
 config-version: 2
 
 name: 'apple_search_ads_source_integration_tests'
-version: '0.2.1'
+version: '0.2.2'
 
 profile: 'integration_tests' 
 
 vars:
-  apple_search_ads_schema: apple_ads_source_integrations_tests
+  apple_search_ads_schema: apple_ads_source_integrations_tests_1
   apple_search_ads_organization_identifier: "organization_data"
   apple_search_ads_campaign_history_identifier: "campaign_history_data"
   apple_search_ads_campaign_report_identifier: "campaign_report_data"
