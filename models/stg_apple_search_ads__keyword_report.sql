@@ -1,3 +1,5 @@
+ADD source_relation WHERE NEEDED + CHECK JOINS AND WINDOW FUNCTIONS! (Delete this line when done.)
+
 {{ config(enabled=var('ad_reporting__apple_search_ads_enabled', True)) }}
 
 with base as (
@@ -15,12 +17,19 @@ fields as (
                 staging_columns=get_keyword_report_columns()
             )
         }}     
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='apple_search_ads_union_schemas', 
+            union_database_variable='apple_search_ads_union_databases') 
+        }}
+
     from base
 ),
 
 final as (
-    
-    select 
+
+    select
+        source_relation, 
         date as date_day,
         id as keyword_id,
         impressions,
