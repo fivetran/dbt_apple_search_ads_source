@@ -1,5 +1,12 @@
 # dbt_apple_search_ads_source v0.3.0
 [PR #45](https://github.com/fivetran/dbt_apple_search_ads_source/pull/45) includes the following updates:
+## Breaking changes
+- Updated the source identifier format for consistency with their respective source names and compatibility with the `fivetran_utils.union_data` macro. If you are using the previous identifier, be sure to update to the current version! Identifiers now are:
+
+| current  | previous |
+|----------|----------|
+|apple_search_ads_ad_level_report_identifier | apple_search_ads_ad_report_identifier |
+
 ## Feature update 🎉
 - Unioning capability! This adds the ability to union source data from multiple apple_search_ads connectors. Refer to the [README](https://github.com/fivetran/dbt_apple_search_ads_source/blob/main/README.md) for more details.
 

@@ -82,7 +82,7 @@ sources:
       
       - name: ad_level_report
         description: Each record represents the daily performance of an ad in Apple Search Ads.
-        identifier: "{{ var('apple_search_ads_ad_report_identifier', 'ad_level_report') }}"
+        identifier: "{{ var('apple_search_ads_ad_level_report_identifier', 'ad_level_report') }}"
         columns:
           - name: date
             description: Date for daily report aggregation.
