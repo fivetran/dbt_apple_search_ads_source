@@ -8,7 +8,7 @@
 |apple_search_ads_ad_level_report_identifier | apple_search_ads_ad_report_identifier |
 
 ## Feature update 🎉
-- Unioning capability! This adds the ability to union source data from multiple apple_search_ads connectors. Refer to the [README](https://github.com/fivetran/dbt_apple_search_ads_source/blob/main/README.md) for more details.
+- Unioning capability! This adds the ability to union source data from multiple apple_search_ads connectors. Refer to the [Union Multiple Connectors README section](https://github.com/fivetran/dbt_apple_search_ads_source/blob/main/README.md#union-multiple-connectors) for more details.
 
 ## Under the hood 🚘
 - Updated tmp models to union source data using the `fivetran_utils.union_data` macro. 
