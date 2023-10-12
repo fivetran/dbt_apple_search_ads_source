@@ -16,12 +16,19 @@ fields as (
             )
         }}
         
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='apple_search_ads_union_schemas', 
+            union_database_variable='apple_search_ads_union_databases') 
+        }}
+
     from base
 ),
 
 final as (
-    
-    select 
+
+    select
+        source_relation, 
         modification_time as modified_at,
         campaign_id,
         ad_group_id,
@@ -31,7 +38,7 @@ final as (
         match_type,
         status as keyword_status,
         text as keyword_text,
-        row_number() over (partition by id order by modification_time desc) = 1 as is_most_recent_record
+        row_number() over (partition by source_relation, id order by modification_time desc) = 1 as is_most_recent_record
     from fields
 )
 

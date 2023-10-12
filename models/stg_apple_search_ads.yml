@@ -6,9 +6,12 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - ad_group_id
             - modified_at
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: modified_at
         description: Timestamp of when the ad group object was last modified.
         tests:
@@ -37,9 +40,12 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - ad_group_id
             - date_day
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: ad_group_id
         description: Ad group ID associated with the record.
         tests:
@@ -66,9 +72,12 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - ad_id
             - modified_at
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: created_at
         description: Timestamp of when ad was created.
       - name: modified_at
@@ -95,10 +104,13 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - ad_id
             - date_day
             - ad_group_id
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: date_day
         description: Date for daily report aggregation.
         tests:
@@ -131,9 +143,12 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - campaign_id
             - modified_at
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: modified_at
         description: Timestamp of when the campaign object was last modified.
         tests:
@@ -160,9 +175,12 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - campaign_id
             - date_day
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: campaign_id
         description: Campaign ID associated with the record.
         tests:
@@ -190,9 +208,12 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - keyword_id
             - modified_at
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: modified_at
         description: Timestamp of when the keyword object was last modified.
         tests:
@@ -223,9 +244,12 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - keyword_id
             - date_day
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: keyword_id
         description: Keyword ID associated with the record.
         tests:
@@ -252,8 +276,11 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - organization_id
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: organization_id
         description: Organization ID associated with the record.
         tests:
@@ -272,9 +299,12 @@ models:
     tests:
       - dbt_utils.unique_combination_of_columns:
           combination_of_columns:
+            - source_relation
             - _fivetran_id
             - date_day
     columns:
+      - name: source_relation
+        description: "{{ doc('source_relation') }}"
       - name: _fivetran_id
         description: A Fivetran internal unique id that helps us avoid duplicate rows in primary keyless tables.
         tests:

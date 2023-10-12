@@ -15,12 +15,19 @@ fields as (
                 staging_columns=get_ad_group_report_columns()
             )
         }}
+    
+        {{ fivetran_utils.source_relation(
+            union_schema_variable='apple_search_ads_union_schemas', 
+            union_database_variable='apple_search_ads_union_databases') 
+        }}
+
     from base
 ),
 
 final as (
-    
+
     select
+        source_relation,
         date as date_day, 
         ad_group_id,
         impressions,

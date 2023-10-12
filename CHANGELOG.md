@@ -1,3 +1,20 @@
+# dbt_apple_search_ads_source v0.3.0
+[PR #45](https://github.com/fivetran/dbt_apple_search_ads_source/pull/45) includes the following updates:
+## Breaking changes
+- Updated the source identifier format for consistency with their respective source names and compatibility with the `fivetran_utils.union_data` macro. If you are using the previous identifier, be sure to update to the current version! Identifiers now are:
+
+| current  | previous |
+|----------|----------|
+|apple_search_ads_ad_level_report_identifier | apple_search_ads_ad_report_identifier |
+
+## Feature update 🎉
+- Unioning capability! This adds the ability to union source data from multiple apple_search_ads connectors. Refer to the [Union Multiple Connectors README section](https://github.com/fivetran/dbt_apple_search_ads_source/blob/main/README.md#union-multiple-connectors) for more details.
+
+## Under the hood 🚘
+- Updated tmp models to union source data using the `fivetran_utils.union_data` macro. 
+- To distinguish which source each field comes from, added `source_relation` column in each staging model and applied the `fivetran_utils.source_relation` macro.
+- Updated tests to account for the new `source_relation` column.
+
 # dbt_apple_search_ads_source v0.2.2
 ## Bug Fix
 - The `apple_search_ads__search_term_passthrough_metrics` variable was moved to be within the return call of the `get_search_term_report_columns` macro. The previous placement caused an issue where the passthrough metrics would not properly persist to downstream models. ([PR #42](https://github.com/fivetran/dbt_apple_search_ads_source/pull/42))
