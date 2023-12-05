@@ -34,7 +34,7 @@ dispatch:
 ```
 
 ## Step 2: Install the package (skip if also using the `apple_search_ads` transformation package)
-If you  are **not** using the [Apple Search Ads transformation package](https://github.com/fivetran/apple_search_ads), include the following apple_search_ads_source package version in your `packages.yml` file.
+If you  are **not** using the [Apple Search Ads transformation package](https://github.com/fivetran/dbt_apple_search_ads), include the following apple_search_ads_source package version in your `packages.yml` file.
 > TIP: Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instructions or [read the dbt docs](https://docs.getdbt.com/docs/package-management) for more information on installing packages.
 ```yaml
 packages:
