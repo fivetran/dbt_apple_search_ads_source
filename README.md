@@ -13,9 +13,9 @@
 # Apple Search Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_apple_search_ads_source/))
 ## What does this dbt package do?
 - Materializes [Apple Search Ads staging tables](https://fivetran.github.io/dbt_apple_search_ads_source/#!/overview/apple_search_ads_source/models/?g_v=1&g_e=seeds) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/apple-search-ads#schemainformation). These staging tables clean, test, and prepare your Apple Search Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/apple-search-ads) for analysis by doing the following:
-- Names columns for consistency across all packages and for easier analysis
-- Adds freshness tests to source data
-- Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
+  - Names columns for consistency across all packages and for easier analysis
+  - Adds freshness tests to source data
+  - Adds column-level testing where applicable. For example, all primary keys are tested for uniqueness and non-null values.
 - Generates a comprehensive data dictionary of your apple_search_ads data through the [dbt docs site](https://fivetran.github.io/dbt_apple_search_ads_source/).
 - These tables are designed to work simultaneously with our [Apple Search Ads transformation package](https://github.com/fivetran/dbt_apple_search_ads).
 
