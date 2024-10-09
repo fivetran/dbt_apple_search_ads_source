@@ -43,6 +43,7 @@ final as (
         match_type,
         search_term_source,
         search_term_text,
+        conversions,
         impressions,
         taps,
         new_downloads,

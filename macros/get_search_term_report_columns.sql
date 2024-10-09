@@ -10,6 +10,7 @@
     {"name": "campaign_id", "datatype": dbt.type_int()},
     {"name": "date", "datatype": "date"},
     {"name": "deleted", "datatype": "boolean"},
+    {"name": "conversions", "datatype": dbt.type_int()},
     {"name": "impressions", "datatype": dbt.type_int()},
     {"name": "keyword", "datatype": dbt.type_string()},
     {"name": "keyword_display_status", "datatype": dbt.type_string()},

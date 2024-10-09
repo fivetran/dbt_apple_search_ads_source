@@ -30,6 +30,7 @@ final as (
         source_relation, 
         date as date_day,
         id as campaign_id,
+        conversions,
         impressions,
         local_spend_amount as spend,
         local_spend_currency as currency,

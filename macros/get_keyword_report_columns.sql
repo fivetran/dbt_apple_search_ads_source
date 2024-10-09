@@ -3,6 +3,7 @@
 {% set columns = [
     {"name": "date", "datatype": "date"},
     {"name": "id", "datatype": dbt.type_int()},
+    {"name": "conversions", "datatype": dbt.type_int()},
     {"name": "impressions", "datatype": dbt.type_int()},
     {"name": "local_spend_amount", "datatype": dbt.type_numeric()},
     {"name": "local_spend_currency", "datatype": dbt.type_string()},

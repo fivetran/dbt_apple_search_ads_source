@@ -32,6 +32,7 @@ final as (
         campaign_id,
         ad_group_id,
         ad_id,
+        conversions,
         impressions,
         local_spend_amount as spend,
         local_spend_currency as currency,
