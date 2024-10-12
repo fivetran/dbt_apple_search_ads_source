@@ -38,7 +38,9 @@ final as (
         redownloads,
         taps
 
-        {{ fivetran_utils.fill_pass_through_columns('apple_search_ads__ad_group_passthrough_metrics') }}
+        {{ apple_search_ads_fill_pass_through_columns(
+            pass_through_fields=var('apple_search_ads__ad_group_passthrough_metrics'),
+            except=['conversions']) }}
     from fields
 )
 

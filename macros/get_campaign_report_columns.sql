@@ -12,7 +12,11 @@
     {"name": "taps", "datatype": dbt.type_int()}
 ] %}
 
-{{ fivetran_utils.add_pass_through_columns(columns, var('apple_search_ads__campaign_passthrough_metrics')) }}
+{{ apple_search_ads_add_pass_through_columns(
+    base_columns=columns,
+    pass_through_fields=var('apple_search_ads__campaign_passthrough_metrics'),
+    except_fields=['conversions']
+    ) }}
 
 {{ return(columns) }}
 
