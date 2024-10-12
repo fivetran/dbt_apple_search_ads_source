@@ -55,7 +55,7 @@ models:
         tests:
           - not_null
       - name: conversions
-        description: The number of attributed conversions, representing a valuable action taken by a user, such as an app install or purchase.
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -128,7 +128,7 @@ models:
         tests:
           - not_null
       - name: conversions
-        description: The number of attributed conversions, representing a valuable action taken by a user, such as an app install or purchase.
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -194,7 +194,7 @@ models:
         tests:
           - not_null
       - name: conversions
-        description: The number of attributed conversions, representing a valuable action taken by a user, such as an app install or purchase.
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -265,7 +265,7 @@ models:
         tests:
           - not_null
       - name: conversions
-        description: The number of attributed conversions, representing a valuable action taken by a user, such as an app install or purchase.
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -350,7 +350,7 @@ models:
       - name: search_term_text
         description: The word or phrase to match of user searches.
       - name: conversions
-        description: The number of attributed conversions, representing a valuable action taken by a user, such as an app install or purchase.
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: taps

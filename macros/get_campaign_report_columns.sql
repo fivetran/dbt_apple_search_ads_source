@@ -15,7 +15,7 @@
 {{ apple_search_ads_add_pass_through_columns(
     base_columns=columns,
     pass_through_fields=var('apple_search_ads__campaign_passthrough_metrics'),
-    except_fields=['conversions']
+    except_fields=['conversions', 'conversion_rate']
     ) }}
 
 {{ return(columns) }}
