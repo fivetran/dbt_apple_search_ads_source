@@ -66,7 +66,9 @@ To connect your multiple schema/database sources to the package models, follow t
 #### Passing Through Additional Metrics
 By default, this package will select `clicks`, `impressions`, `cost`, and `conversions` from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
 
-> IMPORTANT: Make sure to exercise due diligence when adding metrics to these models. The metrics added by default (taps, impressions, and spend) have been vetted by the Fivetran team, maintaining this package for accuracy. There are metrics included within the source reports, such as metric averages, which may be inaccurately represented at the grain for reports created in this package. You must ensure that whichever metrics you pass through are appropriate to aggregate at the respective reporting levels in this package.
+> IMPORTANT: Make sure to exercise due diligence when adding metrics to these models. The metrics added by default (taps, impressions, spend, and conversions) have been vetted by the Fivetran team, maintaining this package for accuracy. There are metrics included within the source reports, such as metric averages, which may be inaccurately represented at the grain for reports created in this package. You must ensure that whichever metrics you pass through are appropriate to aggregate at the respective reporting levels in this package.
+
+> NOTE: There is no direct `conversion_value` field available in Apple Search Ads data. See the [DECISIONLOG](https://github.com/fivetran/dbt_apple_search_ads/blob/main/DECISIONLOG.md#conversion-value) for more details on alternatives.
 
 ```yml
 vars:
