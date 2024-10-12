@@ -49,7 +49,10 @@ final as (
         new_downloads,
         redownloads
 
-        {{ apple_search_ads_fill_pass_through_columns(pass_through_fields=var('apple_search_ads__search_term_passthrough_metrics') }}
+        {{ apple_search_ads_fill_pass_through_columns(
+            pass_through_fields=var('apple_search_ads__search_term_passthrough_metrics'),
+            except=['conversions']) }}
+
     from fields
 )
 

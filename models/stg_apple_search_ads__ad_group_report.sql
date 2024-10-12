@@ -41,6 +41,7 @@ final as (
         {{ apple_search_ads_fill_pass_through_columns(
             pass_through_fields=var('apple_search_ads__ad_group_passthrough_metrics'),
             except=['conversions']) }}
+
     from fields
 )
 
