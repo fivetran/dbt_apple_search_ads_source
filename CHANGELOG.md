@@ -1,5 +1,5 @@
-# dbt_apple_search_ads_source v0.12.0
-[PR #24](https://github.com/fivetran/dbt_apple_search_ads_source/pull/24) includes the following updates:
+# dbt_apple_search_ads_source v0.4.0
+[PR #50](https://github.com/fivetran/dbt_apple_search_ads_source/pull/50) includes the following updates:
 
 ## Feature Updates: Conversion Support!
 - Added the `conversions` source field to each `stg_apple_search_ads__*_report` model.
