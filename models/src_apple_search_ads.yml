@@ -46,6 +46,8 @@ sources:
             description: Ad group ID associated with the record.
           - name: date
             description: Date for daily report aggregation.
+          - name: conversions
+            description: Total installs resulting from a view or a tap.
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
@@ -92,6 +94,8 @@ sources:
             description: Ad group ID associated with the record
           - name: ad_id
             description: Ad ID associated with the record.
+          - name: conversions
+            description: Total installs resulting from a view or a tap.
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
@@ -132,6 +136,8 @@ sources:
             description: Campaign ID associated with the record.
           - name: date
             description: Date for daily report aggregation.
+          - name: conversions
+            description: Total installs resulting from a view or a tap.
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
@@ -176,6 +182,8 @@ sources:
             description: Keyword ID associated with the record.
           - name: date
             description: Date for daily report aggregation.
+          - name: conversions
+            description: Total installs resulting from a view or a tap.
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
@@ -240,6 +248,8 @@ sources:
             description: The search term source can either be TARGETED or AUTO; if this value is AUTO so will match_type.
           - name: search_term_text
             description: The word or phrase to match of user searches.
+          - name: conversions
+            description: Total installs resulting from a view or a tap.
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: taps
