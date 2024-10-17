@@ -21,6 +21,10 @@ vars:
 
   apple_search_ads__ad_group_passthrough_metrics:
     - name: conversions
+    - name: lat_off_installs
+  apple_search_ads__ad_passthrough_metrics:
+    - name: conversions
+      alias: conversions_alias_should_be_included
 
 models:
   +schema: apple_search_ads_source

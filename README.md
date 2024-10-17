@@ -51,6 +51,8 @@ vars:
 ```
 
 ### (Optional) Step 4: Additional configurations
+<details open><summary>Expand/Collapse details</summary>
+
 #### Union multiple connectors
 If you have multiple apple_search_ads connectors in Fivetran and would like to use this package on all of them simultaneously, we have provided functionality to do so. The package will union all of the data together and pass the unioned table into the transformations. You will be able to see which source it came from in the `source_relation` column of each model. To use this functionality, you will need to set either the `apple_search_ads_union_schemas` OR `apple_search_ads_union_databases` variables (cannot do both) in your root `dbt_project.yml` file:
 
@@ -64,11 +66,11 @@ vars:
 To connect your multiple schema/database sources to the package models, follow the steps outlined in the [Union Data Defined Sources Configuration](https://github.com/fivetran/dbt_fivetran_utils/tree/releases/v0.4.latest#union_data-source) section of the Fivetran Utils documentation for the union_data macro. This will ensure a proper configuration and correct visualization of connections in the DAG.
 
 #### Passing Through Additional Metrics
-By default, this package will select `clicks`, `impressions`, `cost`, and `conversions` from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
+By default, this package will select `taps`, `impressions`, `spend` (aliased from source `local_spend_amount` field), `new_downloads`, `redownloads`, and `conversions` (installs resulting from a view or a tap) from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
 
 > IMPORTANT: Make sure to exercise due diligence when adding metrics to these models. The metrics added by default (taps, impressions, spend, and conversions) have been vetted by the Fivetran team, maintaining this package for accuracy. There are metrics included within the source reports, such as metric averages, which may be inaccurately represented at the grain for reports created in this package. You must ensure that whichever metrics you pass through are appropriate to aggregate at the respective reporting levels in this package.
 
-> NOTE: There is no direct `conversion_value` field available in Apple Search Ads data. See the [DECISIONLOG](https://github.com/fivetran/dbt_apple_search_ads/blob/main/DECISIONLOG.md#conversion-value) for more details on alternatives.
+> NOTE: There is no direct `conversion_value` field available in Apple Search Ads data. See the Apple Search Ads transform package [DECISIONLOG](https://github.com/fivetran/dbt_apple_search_ads/blob/main/DECISIONLOG.md#conversion-value) for more details on alternatives.
 
 ```yml
 vars:
@@ -87,6 +89,7 @@ vars:
       - name: "other_id"
         alias: "another_id"
 ```
+
 #### Disabling Additional Models
 It's possible that your Apple Search Ads connector does not sync every table that this package expects. If your syncs exclude certain tables, it is because you either don't use that functionality in Apple Search Ads or actively excluded some tables from your syncs. To disable the corresponding functionality in the package, you must add the relevant variables. By default, the package assumes that all variables are true. Add variables for only the tables you want to disable.
 
@@ -119,6 +122,8 @@ If an individual source table has a different name than the package expects, add
 vars:
     apple_search_ads_<default_source_table_name>_identifier: your_table_name 
 ```
+
+</details>
 
 ### (Optional) Step 5: Orchestrate your models with Fivetran Transformations for dbt Core™
 <details><summary>Expand for more details</summary>

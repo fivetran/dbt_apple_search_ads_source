@@ -1,4 +1,4 @@
-{# Backwards compatible version of apple_search_ads_add_pass_through_columns #}
+{# Backwards compatible version of fivetran_utils.ads_add_pass_through_columns #}
 
 {% macro apple_search_ads_add_pass_through_columns(base_columns, pass_through_fields, except_fields=[]) %}
 
