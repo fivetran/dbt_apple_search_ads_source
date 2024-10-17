@@ -68,8 +68,6 @@ To connect your multiple schema/database sources to the package models, follow t
 #### Passing Through Additional Metrics
 By default, this package will select `taps`, `impressions`, `spend` (aliased from source `local_spend_amount` field), `new_downloads`, `redownloads`, and `conversions` (installs resulting from a view or a tap) from the source reporting tables to store into the staging models. If you would like to pass through additional metrics to the staging models, add the below configurations to your `dbt_project.yml` file. These variables allow for the pass-through fields to be aliased (`alias`) if desired, but not required. Use the below format for declaring the respective pass-through variables:
 
-> IMPORTANT: Make sure to exercise due diligence when adding metrics to these models. The metrics added by default (taps, impressions, spend, and conversions) have been vetted by the Fivetran team, maintaining this package for accuracy. There are metrics included within the source reports, such as metric averages, which may be inaccurately represented at the grain for reports created in this package. You must ensure that whichever metrics you pass through are appropriate to aggregate at the respective reporting levels in this package.
-
 > NOTE: There is no direct `conversion_value` field available in Apple Search Ads data. See the Apple Search Ads transform package [DECISIONLOG](https://github.com/fivetran/dbt_apple_search_ads/blob/main/DECISIONLOG.md#conversion-value) for more details on alternatives.
 
 ```yml
@@ -90,6 +88,8 @@ vars:
         alias: "another_id"
 ```
 
+> IMPORTANT: Make sure to exercise due diligence when adding metrics to these models. The metrics added by default have been vetted by the Fivetran team, maintaining this package for accuracy. There are metrics included within the source reports, such as metric averages, which may be inaccurately represented at the grain for reports created in this package. You must ensure that whichever metrics you pass through are appropriate to aggregate at the respective reporting levels in this package.
+
 #### Disabling Additional Models
 It's possible that your Apple Search Ads connector does not sync every table that this package expects. If your syncs exclude certain tables, it is because you either don't use that functionality in Apple Search Ads or actively excluded some tables from your syncs. To disable the corresponding functionality in the package, you must add the relevant variables. By default, the package assumes that all variables are true. Add variables for only the tables you want to disable.
 
@@ -97,10 +97,6 @@ The `apple_search_ads__using_search_terms` variable below refers to the `search_
 
 ```yml
 # dbt_project.yml
-
-...
-config-version: 2
-
 vars:
   apple_search_ads__using_search_terms: False # by default this is true
 ```
@@ -154,7 +150,12 @@ The Fivetran team maintaining this package _only_ maintains the latest version o
 ### Contributions
 A small team of analytics engineers at Fivetran develops these dbt packages. However, the packages are made better by community contributions.
 
-We highly encourage and welcome contributions to this package. Check out [this dbt Discourse article](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) to learn how to contribute to a dbt package.
+We highly encourage and welcome contributions to this package. Check out [this dbt Discourse article](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) on the best workflow for contributing to a package.
+
+#### Contributors
+We thank [everyone](https://github.com/fivetran/dbt_apple_search_ads_source/graphs/contributors) who has taken the time to contribute. Each PR, bug report, and feature request has made this package better and is truly appreciated.
+
+A special thank you to [Seer Interactive](https://www.seerinteractive.com/?utm_campaign=Fivetran%20%7C%20Models&utm_source=Fivetran&utm_medium=Fivetran%20Documentation), who we closely collaborated with to introduce native conversion support to our Ad packages.
 
 ## Are there any resources available?
 - If you have questions or want to reach out for help, see the [GitHub Issue](https://github.com/fivetran/dbt_apple_search_ads_source/issues/new/choose) section to find the right avenue of support for you.
