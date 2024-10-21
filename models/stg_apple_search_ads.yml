@@ -54,6 +54,8 @@ models:
         description: Date for daily report aggregation.
         tests:
           - not_null
+      - name: conversions
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -125,6 +127,8 @@ models:
         description: Ad ID associated with the record.
         tests:
           - not_null
+      - name: conversions
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -189,6 +193,8 @@ models:
         description: Date for daily report aggregation.
         tests:
           - not_null
+      - name: conversions
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -258,6 +264,8 @@ models:
         description: Date for daily report aggregation.
         tests:
           - not_null
+      - name: conversions
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -341,6 +349,8 @@ models:
         description: The search term source can either be TARGETED or AUTO; if this value is AUTO so will match_type.
       - name: search_term_text
         description: The word or phrase to match of user searches.
+      - name: conversions
+        description: Total installs resulting from a view or a tap.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: taps
