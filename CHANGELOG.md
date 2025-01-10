@@ -1,3 +1,8 @@
+# dbt_apple_search_ads_source version.version
+
+## Documentation
+- Corrected references to connectors and connections in the README. ([#52](https://github.com/fivetran/dbt_apple_search_ads_source/pull/52))
+
 # dbt_apple_search_ads_source v0.4.0
 [PR #50](https://github.com/fivetran/dbt_apple_search_ads_source/pull/50) includes the following **BREAKING CHANGE** updates:
 
