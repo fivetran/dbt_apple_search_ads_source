@@ -32,12 +32,15 @@ final as (
         campaign_id,
         ad_group_id,
         ad_id,
-        conversions,
         impressions,
         local_spend_amount as spend,
         local_spend_currency as currency,
-        new_downloads,
-        redownloads,
+        coalesce(conversions, tap_installs) as conversions, 
+        coalesce(tap_installs, conversions) as tap_installs,
+        coalesce(new_downloads,tap_new_downloads) as new_downloads,
+        coalesce(tap_new_downloads,new_downloads) as tap_new_downloads,
+        coalesce(redownloads,tap_redownloads) as redownloads,
+        coalesce(tap_redownloads,redownloads) as tap_redownloads,
         taps
 
         {{ apple_search_ads_fill_pass_through_columns(
