@@ -1,4 +1,5 @@
-<p align="center">
+# Apple Search Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_apple_search_ads_source/))
+<p align="left">
     <a alt="License"
         href="https://github.com/fivetran/dbt_apple_search_ads_source/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" /></a>
@@ -10,7 +11,6 @@
         <img src="https://img.shields.io/badge/Contributions-welcome-blueviolet" /></a>
 </p>
 
-# Apple Search Ads Source dbt Package ([Docs](https://fivetran.github.io/dbt_apple_search_ads_source/))
 ## What does this dbt package do?
 - Materializes [Apple Search Ads staging tables](https://fivetran.github.io/dbt_apple_search_ads_source/#!/overview/apple_search_ads_source/models/?g_v=1&g_e=seeds) which leverage data in the format described by [this ERD](https://fivetran.com/docs/applications/apple-search-ads#schemainformation). These staging tables clean, test, and prepare your Apple Search Ads data from [Fivetran's connector](https://fivetran.com/docs/applications/apple-search-ads) for analysis by doing the following:
   - Names columns for consistency across all packages and for easier analysis
@@ -39,7 +39,7 @@ If you  are **not** using the [Apple Search Ads transformation package](https://
 ```yaml
 packages:
   - package: fivetran/apple_search_ads_source
-    version: [">=0.4.0", "<0.5.0"] # we recommend using ranges to capture non-breaking changes automatically
+    version: [">=0.5.0", "<0.6.0"] # we recommend using ranges to capture non-breaking changes automatically
 ```
 ### Step 3: Define database and schema variables
 By default, this package runs using your destination and the `apple_search_ads` schema. If this is not where your Apple Search Ads data is (for example, if your Apple Search Ads schema is named `apple_search_ads_fivetran`), add the following configuration to your root `dbt_project.yml` file:
