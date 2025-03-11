@@ -68,6 +68,12 @@ models:
         description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
       - name: taps
         description: The number of times ad was tapped by users within the reporting time period.
+      - name: tap_installs
+        description: "{{ doc('tap_installs') }}"
+      - name: tap_new_downloads
+        description: "{{ doc('tap_new_downloads') }}"
+      - name: tap_redownloads
+        description: "{{ doc('tap_redownloads') }}"
 
   - name: stg_apple_search_ads__ad_history
     description: Each record represents a version of an ad in Apple Search Ads.
@@ -141,6 +147,12 @@ models:
         description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
       - name: taps
         description: The number of times ad was tapped by users within the reporting time period.
+      - name: tap_installs
+        description: "{{ doc('tap_installs') }}"
+      - name: tap_new_downloads
+        description: "{{ doc('tap_new_downloads') }}"
+      - name: tap_redownloads
+        description: "{{ doc('tap_redownloads') }}"
       
   - name: stg_apple_search_ads__campaign_history
     description: Each record represents a version of a campaign in Apple Search Ads.
@@ -207,6 +219,12 @@ models:
         description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
       - name: taps
         description: The number of times ad was tapped by users within the reporting time period.
+      - name: tap_installs
+        description: "{{ doc('tap_installs') }}"
+      - name: tap_new_downloads
+        description: "{{ doc('tap_new_downloads') }}"
+      - name: tap_redownloads
+        description: "{{ doc('tap_redownloads') }}"
   
 
   - name: stg_apple_search_ads__keyword_history
@@ -278,6 +296,12 @@ models:
         description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
       - name: taps
         description: The number of times ad was tapped by users within the reporting time period.
+      - name: tap_installs
+        description: "{{ doc('tap_installs') }}"
+      - name: tap_new_downloads
+        description: "{{ doc('tap_new_downloads') }}"
+      - name: tap_redownloads
+        description: "{{ doc('tap_redownloads') }}"
 
   - name: stg_apple_search_ads__organization
     description: Each record represents an organization in Apple Search Ads.
@@ -359,3 +383,9 @@ models:
         description: App downloads from new users who have never before installed the respective app.
       - name: redownloads 
         description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
+      - name: tap_installs
+        description: "{{ doc('tap_installs') }}"
+      - name: tap_new_downloads
+        description: "{{ doc('tap_new_downloads') }}"
+      - name: tap_redownloads
+        description: "{{ doc('tap_redownloads') }}"
