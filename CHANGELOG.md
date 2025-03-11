@@ -1,5 +1,11 @@
 # dbt_apple_search_ads_source v0.5.0
+[PR #54](https://github.com/fivetran/dbt_apple_search_ads_source/pull/54) includes the following updates:
 
+## Breaking Changes: Apple Search Ads API v5 schema updates
+- Following the connector updates surrounding the Apple Search Ads API v5 release, the following fields have been introduced to the package and will be used to sunset the below fields, which will be deprecated shortly:
+- `tap_installs` - new version of `conversions`
+- `tap_new_downloads` - new version of `new_downloads`
+- `tap_redownloads` - new version of `redownloads`
 
 ## Documentation
 - Corrected references to connectors and connections in the README. ([#52](https://github.com/fivetran/dbt_apple_search_ads_source/pull/52))

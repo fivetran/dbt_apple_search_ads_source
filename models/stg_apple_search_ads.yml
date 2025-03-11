@@ -55,7 +55,7 @@ models:
         tests:
           - not_null
       - name: conversions
-        description: Total installs resulting from a view or a tap.
+        description: Total installs resulting from a view or a tap. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_installs.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -63,7 +63,7 @@ models:
       - name: currency
         description: This currency value should match the respective organization's currency value.
       - name: new_downloads
-        description: App downloads from new users who have never before installed the respective app.
+        description: App downloads from new users who have never before installed the respective app. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_new_downloads.
       - name: redownloads
         description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
       - name: taps
@@ -134,7 +134,7 @@ models:
         tests:
           - not_null
       - name: conversions
-        description: Total installs resulting from a view or a tap.
+        description: Total installs resulting from a view or a tap. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_installs.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -142,7 +142,7 @@ models:
       - name: currency
         description: This currency value should match the respective organization's currency value.
       - name: new_downloads
-        description: App downloads from new users who have never before installed the respective app.
+        description: App downloads from new users who have never before installed the respective app. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_new_downloads.
       - name: redownloads
         description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
       - name: taps
@@ -206,7 +206,7 @@ models:
         tests:
           - not_null
       - name: conversions
-        description: Total installs resulting from a view or a tap.
+        description: Total installs resulting from a view or a tap. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_installs.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -214,7 +214,7 @@ models:
       - name: currency
         description: This currency value should match the respective organization's currency value.
       - name: new_downloads
-        description: App downloads from new users who have never before installed the respective app.
+        description: App downloads from new users who have never before installed the respective app. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_new_downloads.
       - name: redownloads
         description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
       - name: taps
@@ -283,7 +283,7 @@ models:
         tests:
           - not_null
       - name: conversions
-        description: Total installs resulting from a view or a tap.
+        description: Total installs resulting from a view or a tap. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_installs.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: spend
@@ -291,7 +291,7 @@ models:
       - name: currency
         description: This currency value should match the respective organization's currency value.
       - name: new_downloads
-        description: App downloads from new users who have never before installed the respective app.
+        description: App downloads from new users who have never before installed the respective app. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_new_downloads.
       - name: redownloads
         description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
       - name: taps
@@ -374,15 +374,15 @@ models:
       - name: search_term_text
         description: The word or phrase to match of user searches.
       - name: conversions
-        description: Total installs resulting from a view or a tap.
+        description: Total installs resulting from a view or a tap. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_installs.
       - name: impressions
         description: Number of times your ad appeared in App Store search results.
       - name: taps
         description: The number of times ad was tapped by users within the reporting time period.
       - name: new_downloads
-        description: App downloads from new users who have never before installed the respective app.
+        description: App downloads from new users who have never before installed the respective app. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_new_downloads.
       - name: redownloads 
-        description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
+        description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device. Following the release of Apple Search Ads API v5, this field will be deprecated by April 2025. This will be replaced by tap_redownloads.
       - name: tap_installs
         description: "{{ doc('tap_installs') }}"
       - name: tap_new_downloads
