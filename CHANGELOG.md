@@ -6,6 +6,7 @@
     - `tap_installs` - new version of `conversions`
     - `tap_new_downloads` - new version of `new_downloads`
     - `tap_redownloads` - new version of `redownloads`
+- In order to maintain backwards compatibility and historical data, we have coalesced the new and existing versions of each field.
 - We encourage referencing the new fields, as the fields being replaced will be deprecated by April 2025 in an upcoming release.
 
 ## Documentation
