@@ -25,3 +25,11 @@ New downloads from users who tapped on your ad and have not previously downloade
 {% docs tap_redownloads %}
 A redownload is when a user downloads your app, deletes it, then downloads it again on the same device or a different one following an ad tap. A tap-through redownload is counted when a user redownloads your app within 30 days of tapping on the ad. This field was introduced in [February 2025](https://fivetran.com/docs/changelog/2025/february-2025#applesearchads) as part of the Apple Search Ads v5 API release. It has replaced the `redownloads` field.
 {% enddocs %}
+
+{% docs total_downloads %}
+The sum of `new_downloads` and `redownloads`. Following the [release](https://fivetran.com/docs/changelog/2025/february-2025#applesearchads) of Apple Search Ads API v5, the package will sunset this field by April 2025. Please refer to its replacement, `tap_total_downloads`, instead.
+{% enddocs %}
+
+{% docs tap_total_downloads %}
+The sum of `tap_new_downloads` and `tap_redownloads`. FThis field was introduced in [February 2025](https://fivetran.com/docs/changelog/2025/february-2025#applesearchads) as part of the Apple Search Ads v5 API release. It has replaced the `total_downloads` field.
+{% enddocs %}
