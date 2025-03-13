@@ -7,7 +7,7 @@
     - `tap_new_downloads` - new version of `new_downloads`
     - `tap_redownloads` - new version of `redownloads`
 - In order to maintain backwards compatibility and historical data, we have coalesced the new and existing versions of each field.
-- We encourage referencing the new fields, as the fields being replaced will be deprecated by April 2025 in an upcoming release.
+- **We encourage referencing the new fields, as the fields being replaced will be deprecated by April 2025 in an upcoming release.**
 
 ## Documentation
 - Corrected references to connectors and connections in the README. ([#52](https://github.com/fivetran/dbt_apple_search_ads_source/pull/52))
