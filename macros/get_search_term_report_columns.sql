@@ -22,7 +22,10 @@
     {"name": "redownloads", "datatype": dbt.type_int()},
     {"name": "search_term_source", "datatype": dbt.type_string()},
     {"name": "search_term_text", "datatype": dbt.type_string()},
-    {"name": "taps", "datatype": dbt.type_int()}
+    {"name": "taps", "datatype": dbt.type_int()},
+    {"name": "tap_installs", "datatype": dbt.type_int()},
+    {"name": "tap_new_downloads", "datatype": dbt.type_int()},
+    {"name": "tap_redownloads", "datatype": dbt.type_int()}
 ] %}
 
 {{ apple_search_ads_add_pass_through_columns(

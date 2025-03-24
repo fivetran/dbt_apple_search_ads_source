@@ -11,7 +11,10 @@
     {"name": "local_spend_currency", "datatype": dbt.type_string()},
     {"name": "new_downloads", "datatype": dbt.type_int()},
     {"name": "redownloads", "datatype": dbt.type_int()},
-    {"name": "taps", "datatype": dbt.type_int()}
+    {"name": "taps", "datatype": dbt.type_int()},
+    {"name": "tap_installs", "datatype": dbt.type_int()},
+    {"name": "tap_new_downloads", "datatype": dbt.type_int()},
+    {"name": "tap_redownloads", "datatype": dbt.type_int()}
 ] %}
 
 {{ apple_search_ads_add_pass_through_columns(

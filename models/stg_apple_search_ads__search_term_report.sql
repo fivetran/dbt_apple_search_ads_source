@@ -43,11 +43,14 @@ final as (
         match_type,
         search_term_source,
         search_term_text,
-        conversions,
         impressions,
         taps,
-        new_downloads,
-        redownloads
+        coalesce(conversions, tap_installs) as conversions, 
+        coalesce(tap_installs, conversions) as tap_installs,
+        coalesce(new_downloads, tap_new_downloads) as new_downloads,
+        coalesce(tap_new_downloads, new_downloads) as tap_new_downloads,
+        coalesce(redownloads, tap_redownloads) as redownloads,
+        coalesce(tap_redownloads, redownloads) as tap_redownloads
 
         {{ apple_search_ads_fill_pass_through_columns(
             pass_through_fields=var('apple_search_ads__search_term_passthrough_metrics'),

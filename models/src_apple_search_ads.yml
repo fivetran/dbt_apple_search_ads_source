@@ -47,7 +47,7 @@ sources:
           - name: date
             description: Date for daily report aggregation.
           - name: conversions
-            description: Total installs resulting from a view or a tap.
+            description: "{{ doc('conversions') }}"
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
@@ -55,11 +55,17 @@ sources:
           - name: local_spend_currency
             description: This currency value should match the respective organization's currency value.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app.
+            description: "{{ doc('new_downloads') }}"
           - name: redownloads
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
+            description: "{{ doc('redownloads') }}"
           - name: taps
             description: The number of times ad was tapped by users within the reporting time period.
+          - name: tap_installs
+            description: "{{ doc('tap_installs') }}"
+          - name: tap_new_downloads
+            description: "{{ doc('tap_new_downloads') }}"
+          - name: tap_redownloads
+            description: "{{ doc('tap_redownloads') }}"
 
       - name: ad_history
         description: Each record represents a version of an ad in Apple Search Ads.
@@ -95,7 +101,7 @@ sources:
           - name: ad_id
             description: Ad ID associated with the record.
           - name: conversions
-            description: Total installs resulting from a view or a tap.
+            description: "{{ doc('conversions') }}"
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
@@ -103,11 +109,17 @@ sources:
           - name: local_spend_currency
             description: This currency value should match the respective organization's currency value.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app.
+            description: "{{ doc('new_downloads') }}"
           - name: redownloads
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
+            description: "{{ doc('redownloads') }}"
           - name: taps
             description: The number of times ad was tapped by users within the reporting time period.
+          - name: tap_installs
+            description: "{{ doc('tap_installs') }}"
+          - name: tap_new_downloads
+            description: "{{ doc('tap_new_downloads') }}"
+          - name: tap_redownloads
+            description: "{{ doc('tap_redownloads') }}"
           
       - name: campaign_history
         description: Each record represents a version of a campaign in Apple Search Ads.
@@ -137,7 +149,7 @@ sources:
           - name: date
             description: Date for daily report aggregation.
           - name: conversions
-            description: Total installs resulting from a view or a tap.
+            description: "{{ doc('conversions') }}"
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
@@ -145,11 +157,17 @@ sources:
           - name: local_spend_currency
             description: This currency value should match the respective organization's currency value.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app.
+            description: "{{ doc('new_downloads') }}"
           - name: redownloads
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
+            description: "{{ doc('redownloads') }}"
           - name: taps
             description: The number of times ad was tapped by users within the reporting time period.
+          - name: tap_installs
+            description: "{{ doc('tap_installs') }}"
+          - name: tap_new_downloads
+            description: "{{ doc('tap_new_downloads') }}"
+          - name: tap_redownloads
+            description: "{{ doc('tap_redownloads') }}"
           
       - name: keyword_history
         description: Each record represents a version of a keyword in Apple Search Ads.
@@ -183,7 +201,7 @@ sources:
           - name: date
             description: Date for daily report aggregation.
           - name: conversions
-            description: Total installs resulting from a view or a tap.
+            description: "{{ doc('conversions') }}"
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: local_spend_amount
@@ -191,11 +209,17 @@ sources:
           - name: local_spend_currency
             description: This currency value should match the respective organization's currency value.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app.
+            description: "{{ doc('new_downloads') }}"
           - name: redownloads
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
+            description: "{{ doc('redownloads') }}"
           - name: taps
             description: The number of times ad was tapped by users within the reporting time period.
+          - name: tap_installs
+            description: "{{ doc('tap_installs') }}"
+          - name: tap_new_downloads
+            description: "{{ doc('tap_new_downloads') }}"
+          - name: tap_redownloads
+            description: "{{ doc('tap_redownloads') }}"
 
       - name: organization
         description: Each record represents an organization in Apple Search Ads.
@@ -249,12 +273,18 @@ sources:
           - name: search_term_text
             description: The word or phrase to match of user searches.
           - name: conversions
-            description: Total installs resulting from a view or a tap.
+            description: "{{ doc('conversions') }}"
           - name: impressions
             description: Number of times your ad appeared in App Store search results.
           - name: taps
             description: The number of times ad was tapped by users within the reporting time period.
           - name: new_downloads
-            description: App downloads from new users who have never before installed the respective app.
+            description: "{{ doc('new_downloads') }}"
           - name: redownloads 
-            description: Occurs when a user downloads respective app, deletes it, and downloads the same app again following a tap on an ad on the App Store, or downloads the same app to an additional device.
+            description: "{{ doc('redownloads') }}"
+          - name: tap_installs
+            description: "{{ doc('tap_installs') }}"
+          - name: tap_new_downloads
+            description: "{{ doc('tap_new_downloads') }}"
+          - name: tap_redownloads
+            description: "{{ doc('tap_redownloads') }}"
