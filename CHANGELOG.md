@@ -1,6 +1,6 @@
 # dbt_apple_search_ads_source v0.6.0
 
-[PR #31](https://github.com/fivetran/dbt_apple_search_ads_source/pull/31) includes the following updates:
+[PR #56](https://github.com/fivetran/dbt_apple_search_ads_source/pull/56) includes the following updates:
 
 ## Breaking Change for dbt Core < 1.9.6
 > *Note: This is not relevant to Fivetran Quickstart users.*
