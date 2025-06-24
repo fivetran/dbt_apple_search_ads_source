@@ -1,3 +1,29 @@
+# dbt_apple_search_ads_source v0.6.0
+
+[PR #31](https://github.com/fivetran/dbt_apple_search_ads_source/pull/31) includes the following updates:
+
+## Breaking Change for dbt Core < 1.9.6
+> *Note: This is not relevant to Fivetran Quickstart users.*
+
+Migrated `freshness` from a top-level source property to a source `config` in alignment with [recent updates](https://github.com/dbt-labs/dbt-core/issues/11506) from dbt Core. This will resolve the following deprecation warning that users running dbt >= 1.9.6 may have received:
+
+```
+[WARNING]: Deprecated functionality
+Found `freshness` as a top-level property of `apple_search_ads` in file
+`models/src_apple_search_ads.yml`. The `freshness` top-level property should be moved
+into the `config` of `apple_search_ads`.
+```
+
+**IMPORTANT:** Users running dbt Core < 1.9.6 will not be able to utilize freshness tests in this release or any subsequent releases, as older versions of dbt will not recognize freshness as a source `config` and therefore not run the tests.
+
+If you are using dbt Core < 1.9.6 and want to continue running Apple Search Ads freshness tests, please elect **one** of the following options:
+  1. (Recommended) Upgrade to dbt Core >= 1.9.6
+  2. Do not upgrade your installed version of the `apple_search_ads_source` package. Pin your dependency on v0.5.0 in your `packages.yml` file.
+  3. Utilize a dbt [override](https://docs.getdbt.com/reference/resource-properties/overrides) to overwrite the package's `apple_search_ads` source and apply freshness via the [old](https://github.com/fivetran/dbt_apple_search_ads_source/blob/v0.5.0/models/src_apple_search_ads.yml#L12-L14) top-level property route. This will require you to copy and paste the entirety of the `src_apple_search_ads.yml` [file](https://github.com/fivetran/dbt_apple_search_ads_source/blob/v0.5.0/models/src_apple_search_ads.yml#L5-L290) and add an `overrides: apple_search_ads_source` property.
+
+## Under the Hood
+- Updated the package maintainer PR template.
+
 # dbt_apple_search_ads_source v0.5.0
 [PR #54](https://github.com/fivetran/dbt_apple_search_ads_source/pull/54) includes the following updates:
 
