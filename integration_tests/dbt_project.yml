@@ -30,6 +30,8 @@ models:
   +schema: apple_search_ads_source
 
 seeds:
+  +docs:
+    show: False
   +quote_columns: "{{ true if target.type == 'redshift' else false }}"
   apple_search_ads_source_integration_tests:
     +column_types:
@@ -41,3 +43,7 @@ seeds:
 dispatch:
   - macro_namespace: dbt_utils
     search_order: ['spark_utils', 'dbt_utils']
+
+flags:
+  send_anonymous_usage_stats: False
+  use_colors: True
